@@ -1,1 +1,1 @@
-web: gunicorn NSDR.wsgi --log-file -
+web: gunicorn NSDR.wsgi
