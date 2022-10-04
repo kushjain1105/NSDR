@@ -1,0 +1,27 @@
+{% extends 'Home/layout.html' %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Home/style/login.css' %}">
+{% endblock %}
+{% block body %}
+    {% if message %}
+        {{ message}}
+    {% endif %}
+
+    <div class="login">
+
+        <h1>Login</h1>
+
+        <form action="{% url 'Home:login' %}" method="post" id="login-form">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" autofocus autocomplete="off" name="username"> <br>
+            <input type="password" placeholder="Password" autocomplete="off" name="password"> <br>
+            <input type="submit" id="submit-button" value="Submit">
+        </form>
+
+        <h3>New User: </h3>
+        <a href="{% url 'Home:register' %}">Register</a>
+    </div>
+{% endblock %}

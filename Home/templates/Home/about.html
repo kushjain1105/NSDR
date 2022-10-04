@@ -1,0 +1,25 @@
+{% extends 'Home/layout.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Home/style/about.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="template">
+        <div class="template-content">
+            <h1>About Us</h1>
+            <hr>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Subodh Public School</h2>
+        <div class="grid-one">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </div>
+
+{% endblock %}

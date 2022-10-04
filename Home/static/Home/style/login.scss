@@ -1,0 +1,42 @@
+@forward "globals";
+
+.login {
+    background-color: var(--color2);
+    max-width: 80%;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 20px;
+
+    h3 {
+        position: relative;
+        top: 10px;
+        display: inline;
+    }
+    a {
+        position: relative;
+        top: 10px;
+        color: white;
+        text-decoration: underline;
+    }   
+    #login-form {
+
+        input {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        #submit-button {
+            background-color: var(--color4);
+            color: var(--text-color);
+        }
+        #submit-button:hover {
+            cursor: pointer;
+            color: white;
+        }
+    }
+
+
+}

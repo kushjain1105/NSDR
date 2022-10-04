@@ -1,0 +1,12 @@
+{% extends 'Home/layout.html' %}
+{% block title %}
+Error
+{% endblock %}
+{% block body %}
+<h1>
+
+    {{ message }}
+</h1>
+<a href="{% url 'Home:index' %}">Return to Home</a>
+
+{% endblock %}

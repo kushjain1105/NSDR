@@ -1,0 +1,27 @@
+@forward "globals";
+@forward "template";
+
+body {
+    background-color: var(--text-color);
+}
+.container {
+    margin: 10px;
+    h2 {
+        font-size: 2rem;
+        color: var(--color2);
+        text-align: center;
+    }
+    
+    .grid-one {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 30vh);
+        row-gap: 10px;
+        width: max(60%, 100%);
+        margin: auto;
+    }
+
+    .card {
+        background-color: blue;
+    }
+}
