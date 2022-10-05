@@ -31,13 +31,7 @@ body {
     column-gap: 5px;
     .member {
         // Positioning and Sizing
-        height: 40vh;
-        width: 100%;
-        margin: auto;
-        overflow: hidden;
-        background-color: var(--color2);
-        border-radius: 10px;
-        color: white;
+        
     }
 
     @include u.breakpoint(small) {
@@ -56,6 +50,13 @@ body {
 }
 
 .member {
+    height: 40vh;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background-color: var(--color2);
+    border-radius: 10px;
+    color: white;
     display: grid;
     grid-template-rows: 3fr 0.5fr;
     row-gap: 10px;
@@ -74,6 +75,9 @@ body {
         align-items: center;
         padding: 0.5rem;
         text-align: center;
+    }
+    @include u.breakpoint(large) {
+        height: 55vh;
     }
 }
 
