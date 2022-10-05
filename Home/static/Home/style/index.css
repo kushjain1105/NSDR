@@ -240,6 +240,7 @@ footer .copyright {
   border-radius: 5px;
   color: white;
   font-size: 1rem;
+  text-align: center;
 }
 .container .grid .left a:hover {
   background-color: var(--color2);
@@ -264,6 +265,7 @@ footer .copyright {
   }
   .container .grid .left a {
     max-width: 55%;
+    text-align: center;
   }
   .container .grid .right {
     background-position: center;
@@ -272,5 +274,8 @@ footer .copyright {
 @media (min-width: 56.25em) {
   .container .grid .left {
     width: 80%;
+  }
+  .container .grid .left a {
+    text-align: center;
   }
 }/*# sourceMappingURL=index.css.map */

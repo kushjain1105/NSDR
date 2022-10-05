@@ -27,6 +27,7 @@
                 border-radius: 5px;
                 color: white;
                 font-size: 1rem;
+                text-align: center;
             }
             a:hover {
                 background-color: var(--color2);
@@ -52,6 +53,7 @@
                 justify-content: center;
                 a {
                     max-width: 55%;
+                    text-align: center;
                 }
             }
             .right {
@@ -65,6 +67,10 @@
 
             .left {
                 width: 80%;
+
+                a {
+                    text-align: center;
+                }
             }
         }
     }

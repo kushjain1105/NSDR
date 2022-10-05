@@ -1,0 +1,21 @@
+{% extends 'Home/layout.html' %}
+{% load static %}
+{% block title %}
+    {{member.name}}
+{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'Home/style/member.css' %}">
+{% endblock %}
+{% block body %}
+
+    <div class="container">
+        <div class="grid">
+            <div class="left">
+                <img src="{% get_media_prefix %}{{member.image}}">
+            </div>
+            <div class="right">
+                <h1>{{member.user}}</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}
