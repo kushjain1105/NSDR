@@ -248,7 +248,6 @@ footer .copyright {
   transition: 0.2s ease-in-out;
 }
 .container .grid .right {
-  background-image: url("https://media.istockphoto.com/photos/artificial-intelligence-concept-picture-id1372020521?b=1&k=20&m=1372020521&s=170667a&w=0&h=ubM2UVMUJRzvlWl7Wp6fqovtJzIRSAsntPQKsPrw9YQ=");
   background-size: contain;
   background-position-y: top;
   background-repeat: no-repeat;
@@ -272,6 +271,9 @@ footer .copyright {
   }
 }
 @media (min-width: 56.25em) {
+  .container .grid .left {
+    width: 80%;
+  }
   .container .grid right {
     padding: 2em;
   }
