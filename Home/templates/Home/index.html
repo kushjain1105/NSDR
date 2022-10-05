@@ -4,13 +4,13 @@
 Home
 {% endblock %}
 {% block head %}
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% comment %} <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> {% endcomment %}
 <link rel="stylesheet" href="{% static 'Home/style/index.css' %}">
 {% endblock %}
 {% block body %}
 
 <div class="container">
-    <div class="grid" data-aos="fade-up">
+    <div class="grid">
         <!-- Section Left -->
         <div class="left">
             <h1>NSDR</h1>
@@ -28,8 +28,8 @@ Home
         </div>
     </div>
 </div>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+{% comment %} <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init();
-</script>
+</script> {% endcomment %}
 {% endblock %}
