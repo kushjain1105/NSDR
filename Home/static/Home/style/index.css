@@ -213,4 +213,65 @@ footer .copyright {
   footer .footer-right p {
     width: 80%;
   }
+}
+
+.container {
+  width: 90%;
+  margin: 20px auto;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+}
+.container .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 10px;
+  width: 100%;
+  min-height: 50vh;
+}
+.container .grid .left {
+  padding: 0.5em;
+}
+.container .grid .left button {
+  border: none;
+  padding: 10px;
+  background-color: var(--color3);
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+}
+.container .grid .left button:hover {
+  cursor: pointer;
+  background-color: var(--color2);
+  transition: 0.2s ease-in-out;
+}
+.container .grid .right {
+  background-image: url("https://media.istockphoto.com/photos/artificial-intelligence-concept-picture-id1372020521?b=1&k=20&m=1372020521&s=170667a&w=0&h=ubM2UVMUJRzvlWl7Wp6fqovtJzIRSAsntPQKsPrw9YQ=");
+  background-size: contain;
+  background-position-y: top;
+  background-repeat: no-repeat;
+}
+@media (min-width: 43.75em) {
+  .container .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    height: clamp(50vh, 90%, 60vh);
+  }
+  .container .grid .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .container .grid .left button {
+    max-width: 55%;
+  }
+  .container .grid .right {
+    background-position: center;
+  }
+}
+@media (min-width: 56.25em) {
+  .container .grid right {
+    padding: 2em;
+  }
 }/*# sourceMappingURL=index.css.map */
