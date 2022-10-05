@@ -221,6 +221,7 @@ footer .copyright {
   min-height: 80vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .container .grid {
   display: grid;
