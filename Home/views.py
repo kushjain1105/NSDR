@@ -110,6 +110,7 @@ def form(request):
         # If the user is logged in and has filled in the details...
         user = User.objects.get(username=request.user)
         member_users = members()
+        print(member_users)
         if user in member_users:
             return render(request, "Home/form.html", {
                 "message": "You have already submitted the form."
