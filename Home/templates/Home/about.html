@@ -1,5 +1,6 @@
 {% extends 'Home/layout.html' %}
 {% load static %}
+
 {% block title %}About{% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{% static 'Home/style/about.css' %}">
@@ -13,8 +14,35 @@
     </div>
 
     <div class="container">
-        <h2>Subodh Public School</h2>
-        {% comment %} {% for  in  %}{% endfor %} {% endcomment %}
+        <div class="schools">
+
+            {% for school in schools %}
+            <div class="school">
+
+                <h1>{{ school.name }}</h1>
+
+                <div class="members">
+                    {% for member in members %}
+                        {% if member.school == school %}
+                        <a href="{% url 'Home:member' member.user %}">
+                            <div class="member"> 
+                                
+                                <div class="photo">
+                                    <img src="{% get_media_prefix %}{{member.image}}">
+                                </div>
+
+                                <div class="name">
+                                    {{ member.user.first_name }} {{ member.user.last_name }}
+                                </div>
+                            </div>
+                        </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
     </div>
 
 {% endblock %}

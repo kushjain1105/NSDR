@@ -43,9 +43,20 @@ def logout_request(request):
     return HttpResponseRedirect(reverse("Home:index"))
 
 def about(request):
-    
-    return render(request, "Home/about.html")
+    schools = School.objects.all()
+    members = Member.objects.all()
+    return render(request, "Home/about.html", {
+        "schools": schools,
+        "members": members
+    })
 
+def member(request, user):
+    member_user = User.objects.get(username=user)
+    member_object = Member.objects.filter(user=member_user).first()
+    # print(memvb)
+    return render(request, "Home/member.html", {
+        "member": member_object
+    })
 def register(request):
     if request.method == "POST":
 
