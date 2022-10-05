@@ -9,12 +9,17 @@
 {% block body %}
 
     <div class="container">
+        <h1 id="memberName">{{member}}</h1>
         <div class="grid">
             <div class="left">
                 <img src="{% get_media_prefix %}{{member.image}}">
             </div>
             <div class="right">
                 <h1>{{member.user}}</h1>
+                <p id="bio">
+                    {{member.bio}}
+                </p>
+                <b>Contact {{member.user}}: </b> {{member.user.email}}
             </div>
         </div>
     </div>
