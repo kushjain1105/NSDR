@@ -1,0 +1,16 @@
+@forward "globals";
+@forward "template";
+
+
+body {
+    background-color: white;
+}
+
+.container {
+    width: 90vw;
+    margin: auto;
+
+    h1 {
+        text-align: center;
+    }
+}

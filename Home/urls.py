@@ -13,7 +13,10 @@ urlpatterns = [
     path("register", views.register, name="register"),
     path("about", views.about, name="about"),
     path("form", views.form, name="form"),
-    path("about/<user>", views.member, name="member")
+    path("about/<user>", views.member, name="member"),
+    path("schools", views.schools, name="schools"),
+    path("sources", views.schools, name="sources"),
+    path("documentation", views.documentation, name="documentation"),
 ]
 
 if settings.DEBUG:

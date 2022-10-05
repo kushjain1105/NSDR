@@ -133,3 +133,17 @@ def form(request):
     return render(request, "Home/form.html", {
         "schools": schools
     })
+
+
+def schools(request):
+    schools = School.objects.all()
+    return render(request, "Home/schools.html", {
+        "schools": schools
+    })
+
+
+def documentation(request):
+    return render(request, "Home/Documentation.html")
+    
+def sources(request):
+    return render(request, "Home/Sources.html")

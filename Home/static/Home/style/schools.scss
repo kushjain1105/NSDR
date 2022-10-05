@@ -1,0 +1,38 @@
+@forward "globals";
+@use "util" as u;
+@forward "template";
+
+body {
+    background-color: white;
+}
+.container {
+    width: 90vw;
+    margin: 30px auto;
+}
+
+.school {
+    display: grid;
+    grid-template-rows: 40vh minmax(50vh, auto);
+    row-gap: 20px;
+    background-color: var(--color3);
+    margin: 10px auto;
+
+    .image {
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+    }
+    @include u.breakpoint(medium) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: minmax(40vh, auto);
+    }
+}
+

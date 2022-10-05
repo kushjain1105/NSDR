@@ -1,0 +1,31 @@
+{% extends 'Home/layout.html' %}
+{% load static %}
+{% block title %}Schools{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Home/style/schools.css' %}">
+{% endblock %}
+{% block body %}
+<div class="template">
+    <div class="template-content">
+        <h1>Schools</h1>
+        <hr>
+    </div>
+</div>
+    <div class="container">
+        <div class="schools">
+            {% for school in schools %}
+                <div class="school">
+                    <div class="image">
+                        <img src="{{school.image}}">
+                    </div>
+                    <div class="description">
+                        <h1>
+                            {{ school.name }}
+                        </h1>
+                        {{school.description}}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
