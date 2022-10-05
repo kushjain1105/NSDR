@@ -213,4 +213,9 @@ footer .copyright {
   footer .footer-right p {
     width: 80%;
   }
+}
+
+.container {
+  max-width: 60vw;
+  margin: 0 auto;
 }/*# sourceMappingURL=form.css.map */

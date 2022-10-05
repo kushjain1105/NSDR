@@ -1,2 +1,7 @@
 @forward "globals";
 
+.container {
+    max-width: 60vw;
+    // width: calc();
+    margin: 0 auto;
+}
