@@ -227,7 +227,7 @@ footer .copyright {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
-  row-gap: 10px;
+  row-gap: 50px;
   width: 100%;
   min-height: 50vh;
 }
