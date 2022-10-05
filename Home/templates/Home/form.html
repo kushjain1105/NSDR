@@ -9,5 +9,23 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Form</h1>
+    <div class="container">
+        <h1>Form</h1>
+        <div class="note">
+            <b>Note:</b> Please login or register first before completing this form. <br>
+            {% if message %} {{message}} {% endif %}
+        </div>
+        <form action="{% url 'Home:form' %}" method="post">
+            {% csrf_token %}
+            <select name="school" id="school">
+                <option disabled selected>Select your School</option>
+                {% for school in schools %}
+                    <option value="{{ school.name }}">{{school.name}} </option>
+                {% endfor %}
+            </select>
+            <textarea name="bio" id="" cols="30" rows="10" placeholder="A Short Introduction or bio"></textarea>
+            <input type="file" name="image" accept="image/png, image/jpeg, image/jpg">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 {% endblock %}
