@@ -1,27 +1,48 @@
 @forward "globals";
 @forward "template";
-
+@use "util" as u;
 body {
     background-color: var(--text-color);
 }
 .container {
     margin: 10px;
+
     h2 {
         font-size: 2rem;
         color: var(--color2);
         text-align: center;
+        margin: 10px;
     }
     
     .grid-one {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 30vh);
+        column-gap:20px ;
         row-gap: 10px;
-        width: max(60%, 100%);
+        width: clamp(60vw, 80%, 70vw);
         margin: auto;
     }
-
+    
     .card {
         background-color: blue;
+        height: 40vh;
+    }
+    
+    @include u.breakpoint(medium) {
+        .grid-one {
+            grid-template-columns: repeat(3, 1fr);
+            width: clamp(60vw, 90%, 90vw);            
+        }
+        
+    }
+    @include u.breakpoint(large) {
+        .grid-one {
+            grid-template-columns: repeat(4, 1fr);
+            width: clamp(60vw, 100%, 90vw);            
+        }
+
+        .card {
+            height: 50vh;
+        }
     }
 }

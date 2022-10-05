@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password, check_password, is_password_usable
+from django.template.defaultfilters import slugify
 from .models import *
 # Create your views here.
 
@@ -42,6 +43,7 @@ def logout_request(request):
     return HttpResponseRedirect(reverse("Home:index"))
 
 def about(request):
+    
     return render(request, "Home/about.html")
 
 def register(request):
@@ -79,7 +81,43 @@ def register(request):
 
     return render(request, "Home/register.html")
 
+
+def members():
+    membrs = Member.objects.all()
+    users = []
+    for member in membrs:
+        users.append(member.user)
+    return users
+
 def form(request):
-    if request.user.is_authenticated == False:
-        return HttpResponseRedirect(reverse("Home:login"))
-    return render(request, "Home/form.html")
+    if request.method == "POST":
+        if request.user.is_authenticated == False:
+            return render(request, "Home/form.html", {
+                "message": "Please login/register first."
+            })
+
+        # If the user is logged in and has filled in the details...
+        user = User.objects.get(username=request.user)
+        member_users = members()
+        if user in member_users:
+            return render(request, "Home/form.html", {
+                "message": "You have already submitted the form."
+            })
+        school = School.objects.all().first()
+        bio = request.POST["bio"]
+        imgFile = request.POST["image"]
+
+        imgFile = "images/"+imgFile
+        m = Member(user=user, school=school, bio=bio, image=imgFile)
+        m.save()
+
+        if not bio or not imgFile:
+            return render(request, "Home/form.html", {
+                "message": "Please fill in the details."
+            })
+
+        return HttpResponseRedirect(reverse("Home:index"))
+    schools = School.objects.all()
+    return render(request, "Home/form.html", {
+        "schools": schools
+    })
