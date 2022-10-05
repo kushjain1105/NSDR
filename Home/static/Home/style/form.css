@@ -233,6 +233,9 @@ footer .copyright {
   background-color: var(--color5);
   color: white;
 }
+.container select option {
+  padding: 10px;
+}
 .container label {
   background-color: var(--color5);
   color: white;
