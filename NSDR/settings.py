@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$kw!z)(hlego!3^@=7u4u(!wd_r2s0u6*@bi!m$_(%@4=di-=o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1", "nsdr-webapp.herokuapp.com"]
 
@@ -76,14 +78,26 @@ WSGI_APPLICATION = 'NSDR.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd8r0iei4dv6h86',
+        'USER': 'cyyrppvfeqydgn',
+        'PASSWORD': 'd8r0iei4dv6h86',
+        'HOST': 'ec2-44-205-64-253.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
-
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -138,3 +152,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'Home.User'
 
 WHITENOISE_INDEX_FILE = True
+
+django_heroku.settings(locals())
