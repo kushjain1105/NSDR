@@ -227,23 +227,21 @@ footer .copyright {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
-  row-gap: 10px;
+  row-gap: 50px;
   width: 100%;
   min-height: 50vh;
 }
 .container .grid .left {
   padding: 0.5em;
 }
-.container .grid .left button {
-  border: none;
+.container .grid .left a {
   padding: 10px;
   background-color: var(--color3);
   border-radius: 5px;
   color: white;
   font-size: 1rem;
 }
-.container .grid .left button:hover {
-  cursor: pointer;
+.container .grid .left a:hover {
   background-color: var(--color2);
   transition: 0.2s ease-in-out;
 }
@@ -264,7 +262,7 @@ footer .copyright {
     flex-direction: column;
     justify-content: center;
   }
-  .container .grid .left button {
+  .container .grid .left a {
     max-width: 55%;
   }
   .container .grid .right {
@@ -274,8 +272,5 @@ footer .copyright {
 @media (min-width: 56.25em) {
   .container .grid .left {
     width: 80%;
-  }
-  .container .grid right {
-    padding: 2em;
   }
 }/*# sourceMappingURL=index.css.map */

@@ -218,7 +218,7 @@ footer .copyright {
 .login {
   background-color: var(--color2);
   max-width: 80%;
-  margin: auto;
+  margin: auto auto 20px auto;
   padding: 2rem;
   border-radius: 20px;
 }

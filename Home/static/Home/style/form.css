@@ -216,6 +216,52 @@ footer .copyright {
 }
 
 .container {
-  max-width: 60vw;
-  margin: 0 auto;
+  width: clamp(60vw, 90%, 90vw);
+  margin: 20px auto;
+}
+.container input, .container textarea, .container select {
+  width: 100%;
+  margin: 0.6em 0;
+  padding: 10px;
+  border: 3px solid var(--color5);
+  border-radius: 5px;
+}
+.container #file-upload {
+  display: none;
+}
+.container select {
+  background-color: var(--color5);
+  color: white;
+}
+.container label {
+  background-color: var(--color5);
+  color: white;
+  padding: 10px;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+}
+.container label:hover {
+  transition: 0.3s ease-in-out;
+  background-color: var(--color4);
+}
+.container .fileUpload {
+  display: inline-block;
+}
+.container input[type=submit] {
+  background-color: var(--color5);
+  color: white;
+}
+.container input[type=submit]:hover {
+  cursor: pointer;
+  background-color: var(--color4);
+  transition: 0.2s ease-in-out;
+}
+@media (min-width: 43.75em) {
+  .container {
+    width: clamp(40vw, 90%, 60vw);
+  }
 }/*# sourceMappingURL=form.css.map */

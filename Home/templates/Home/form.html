@@ -25,7 +25,10 @@
                 {% endfor %}
             </select>
             <textarea name="bio" id="" cols="30" rows="10" placeholder="A Short Introduction or bio"></textarea>
-            <input type="file" name="image" accept="image/png, image/jpeg, image/jpg">
+
+            <input type="file" name="image" id="file-upload" accept="image/png, image/jpeg, image/jpg">
+            <label for="file-upload" class="fileUpload">Upload your Image in Portrait Form </label>
+
             <input type="submit" value="Submit">
         </form>
     </div>
