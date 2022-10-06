@@ -14,7 +14,9 @@
 
         <h1>Form</h1>
         <div class="note">
+            {% if request.user.is_authenticated == False %}        
             <b>Note:</b> Please login or register first before completing this form. <br>
+            {% endif %}
             {% if message %} {{message}} {% endif %}
         </div>
 
@@ -27,6 +29,7 @@
                 {% endfor %}
             </select>
             <textarea name="bio" id="" cols="30" rows="10" placeholder="A Short Introduction or Bio"></textarea>
+
             <!-- Here Starts the Image Upload Field -->
             <label for="image-upload-field">Upload an Image in Portrait Form</label>
             <input type="file" accepts="image/png image/jpg image/jpeg image/bmp" name="image" id="image-upload-field">
