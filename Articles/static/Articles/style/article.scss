@@ -8,7 +8,19 @@
     color: white;
     padding: 1rem;
     min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
+    .buttons {
+        margin-top: auto;
+    }
+    .edit-button {
+        background-color: var(--color3);
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+    }
     @include u.breakpoint(medium) {
         width: 75vw;
     }

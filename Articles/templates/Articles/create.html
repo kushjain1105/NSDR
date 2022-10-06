@@ -1,0 +1,22 @@
+{% extends 'Articles/layout.html' %}
+{% load static %}
+
+{% block title %}
+    Craete Article
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Articles/style/form.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Create a New Article</h1>
+        <form action="{% url 'Articles:create' %}" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="Title" name="title">
+            <textarea name="content" id="contect-box" cols="30" rows="10" placeholder="Content"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}

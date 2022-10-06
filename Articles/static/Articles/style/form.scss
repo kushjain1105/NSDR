@@ -1,0 +1,28 @@
+@forward "globals";
+@use "util" as u;
+
+
+.container {
+    width: 90vw;
+    margin: 20px auto;
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 5px solid var(--color5);
+        border-radius: 5px;
+        margin: 5px 0;
+    }
+
+    input[type=submit] {
+        background-color: var(--color5);
+        color: white;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: var(--color4);
+        transition: 0.2s ease-in-out;
+        border: 5px solid var(--color4);
+    }
+}
