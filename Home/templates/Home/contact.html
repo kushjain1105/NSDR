@@ -1,0 +1,37 @@
+{% extends 'Home/layout.html' %}
+{% load static %}
+
+{% block title %}
+    Contact
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Home/style/document.css' %}">
+    <style>
+        .user {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 60vw;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="template">
+    <div class="template-content">
+        <h1>Contact Us</h1>
+        <hr>
+    </div>
+</div>
+
+<div class="container">
+    <ul>
+        {% for user in users %}
+        <li>
+            <b>Contact <a href="{% url 'Home:member' user %}" class="user"> {{ user }}:</a></b> {{ user.email }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
