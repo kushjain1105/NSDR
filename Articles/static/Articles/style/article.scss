@@ -1,0 +1,19 @@
+@forward "globals";
+@use "util" as u;
+
+
+.container {
+    width: 90vw;
+    margin: 10px auto;
+    color: white;
+    padding: 1rem;
+    min-height: 90vh;
+
+    @include u.breakpoint(medium) {
+        width: 75vw;
+    }
+
+    @include u.breakpoint(large) {
+        width: 60vw;
+    }
+}

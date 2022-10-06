@@ -1,0 +1,31 @@
+@forward "globals";
+@forward "template";
+@use "util" as u;
+
+body {
+    background-color: var(--color5);
+}
+
+.container {
+    min-height: 50vh;
+    padding: 1rem;
+    width: 90vw;
+    margin: auto;
+    
+
+    li {
+        padding: 0.3rem;
+    }
+    a {
+        text-decoration: underline;
+        color: white;
+    }
+    @include u.breakpoint(medium) {
+        width: 70vw;
+    }
+
+    @include u.breakpoint(large) {
+        width: 60vw;
+    }
+}
+

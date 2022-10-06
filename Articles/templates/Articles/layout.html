@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'Home/style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Articles/style/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     {% block head %}{% endblock %}
-    <script src="{% static 'Home/js/apps.js' %}"></script>
+    <script src="{% static 'Articles/js/apps.js' %}"></script>
     <title>{% block title %}{% endblock %}</title>
 </head>
 
@@ -56,14 +56,11 @@
                     <a href="{% url 'Articles:index' %}">Articles</a>
                     <a href="{% url 'Articles:article' "NSDR" %}">NSDR</a>
                     <a href="{% url 'Home:form' %}">Form</a>
-
                     <a href="{% url 'Home:sources' %}">Sources</a>
                     <a href="{% url 'Home:schools' %}">Schools</a>
                     <a href="#">Example</a>
-
                     <a href="{% url 'Home:documentation' %}">Documentation</a>
                     <a href="{% url 'Home:contact' %}">Contact </a>
-
                     <a href="#">Example</a>
                 </div>
             </div>
