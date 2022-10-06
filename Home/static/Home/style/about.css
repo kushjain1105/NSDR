@@ -217,7 +217,7 @@ footer .copyright {
 
 .template {
   position: relative;
-  height: 80vh;
+  height: 70vh;
   background-color: var(--color1);
   display: flex;
 }

@@ -215,58 +215,20 @@ footer .copyright {
   }
 }
 
-.template {
-  position: relative;
-  height: 70vh;
-  background-color: var(--color1);
-  display: flex;
-}
-.template .template-content {
-  margin: auto auto 0 auto;
-  width: 90%;
-  padding: 1rem 0;
-}
-.template .template-content h1 {
-  text-align: center;
-  font-size: 3rem;
-}
-.template .template-content hr {
-  width: 150px;
-  background-color: white;
-  height: 5px;
-  position: relative;
-  bottom: 20px;
-}
-
-body {
-  background-color: white;
-}
-
 .container {
   width: 90vw;
-  margin: 30px auto;
-}
-
-.school {
-  display: grid;
-  grid-template-rows: 40vh minmax(50vh, auto);
-  row-gap: 20px;
-  background-color: var(--color3);
   margin: 10px auto;
-}
-.school .image img {
-  height: 100%;
-  width: 100%;
-}
-.school .description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  color: white;
   padding: 1rem;
+  min-height: 90vh;
 }
 @media (min-width: 43.75em) {
-  .school {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: minmax(40vh, auto);
+  .container {
+    width: 75vw;
   }
-}/*# sourceMappingURL=schools.css.map */
+}
+@media (min-width: 56.25em) {
+  .container {
+    width: 60vw;
+  }
+}/*# sourceMappingURL=article.css.map */

@@ -239,34 +239,29 @@ footer .copyright {
 }
 
 body {
-  background-color: white;
+  background-color: var(--color5);
 }
 
 .container {
-  width: 90vw;
-  margin: 30px auto;
-}
-
-.school {
-  display: grid;
-  grid-template-rows: 40vh minmax(50vh, auto);
-  row-gap: 20px;
-  background-color: var(--color3);
-  margin: 10px auto;
-}
-.school .image img {
-  height: 100%;
-  width: 100%;
-}
-.school .description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-height: 50vh;
   padding: 1rem;
+  width: 90vw;
+  margin: auto;
+}
+.container li {
+  padding: 0.3rem;
+}
+.container a {
+  text-decoration: underline;
+  color: white;
 }
 @media (min-width: 43.75em) {
-  .school {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: minmax(40vh, auto);
+  .container {
+    width: 70vw;
   }
-}/*# sourceMappingURL=schools.css.map */
+}
+@media (min-width: 56.25em) {
+  .container {
+    width: 60vw;
+  }
+}/*# sourceMappingURL=index.css.map */

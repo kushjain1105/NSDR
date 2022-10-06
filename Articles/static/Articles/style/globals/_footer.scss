@@ -1,0 +1,99 @@
+@use "../util" as u;
+
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    padding: 1.5em;
+    background-color: var(--color2);
+    color: var(--text-color);
+
+    .footer-sections {
+        width: 90%;
+        margin: auto;
+
+        .footer-left {
+            padding: 1rem;
+
+            .footer-left-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 10px;
+                column-gap: 20px;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    position: relative;
+                    color: var(--text-color);
+                    padding: 0 3px;
+                }
+                
+            }
+        }
+
+        .footer-right {
+            padding: 1rem;
+            width: 100%;
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+   
+    .copyright {
+        text-align: center;
+        margin-top: auto;
+    }
+
+    @include u.breakpoint(medium) {
+        .footer-sections {
+            display: flex;
+
+            .footer-left {
+                .footer-left-grid {
+                    a {
+                        padding: 2px;
+                    }
+                    a::after {
+                        content: "";
+                        position: absolute;
+                        background-color: var(--text-color);
+                        height: 0;
+                        width: 100%;
+                        left: 0;
+                        bottom: 0px;
+                        transition: 0.3s ease-in-out;
+                    }
+                    a:hover::after {
+                        height: 2px;
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    @include u.breakpoint(large) {
+        .footer-left {
+            width: 100%;
+
+            .footer-left-grid {
+                width: 80%;
+                column-gap: 5px;
+                margin-left: auto;
+            }
+        }
+
+        .footer-right {
+            width: 100%;
+            p {
+                width: 80%;
+            }
+            
+        }
+        
+    }
+}

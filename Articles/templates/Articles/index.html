@@ -1,0 +1,25 @@
+{% extends 'Articles/layout.html' %}
+{% load static %}
+
+{% block title %}Articles{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Articles/style/index.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="template">
+        <div class="template-content">
+            <h1>Articles</h1>
+            <hr>
+        </div>
+    </div>
+
+    <div class="container">
+        <ul> 
+            {% for article in articles %}
+                <li><span class="date">{{article.date}}:</span><a href="{% url 'Articles:article' article.title %}"> {{article.title}}  </a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

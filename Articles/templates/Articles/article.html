@@ -1,0 +1,21 @@
+{% extends 'Articles/layout.html' %}
+{% load static %}
+
+{% block title %}{{article.title}} {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Articles/style/article.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="title">
+            <h1>
+                {{article.title}}
+            </h1>
+        </div>
+        <div class="content">
+            {{article.content}}
+        </div>
+    </div>
+{% endblock %}
