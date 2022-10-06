@@ -1,7 +1,5 @@
 from django.urls import path
 from . import views
-from django.conf import settings
-from django.conf.urls.static import static
 
 app_name = "Home"
 
@@ -18,4 +16,4 @@ urlpatterns = [
     path("sources", views.sources, name="sources"),
     path("documentation", views.documentation, name="documentation"),
     path("contact", views.contact, name="contact")
-]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]

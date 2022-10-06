@@ -11,12 +11,14 @@
 {% block body %}
 
     <div class="container">
+
         <h1>Form</h1>
         <div class="note">
             <b>Note:</b> Please login or register first before completing this form. <br>
             {% if message %} {{message}} {% endif %}
         </div>
-        <form action="{% url 'Home:form' %}" method="post">
+
+        <form action="{% url 'Home:form' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <select name="school" id="school">
                 <option disabled selected>Select your School</option>
@@ -24,13 +26,13 @@
                     <option value="{{ school.name }}">{{school.name}} </option>
                 {% endfor %}
             </select>
-            <textarea name="bio" id="" cols="30" rows="10" placeholder="A Short Introduction or bio"></textarea>
-
-            <input type="file" name="image" id="file-upload" accept="image/png, image/jpeg, image/jpg">
-            <label for="file-upload" class="fileUpload">Upload your Image in Portrait Form </label>
-
+            <textarea name="bio" id="" cols="30" rows="10" placeholder="A Short Introduction or Bio"></textarea>
+            <!-- Here Starts the Image Upload Field -->
+            <label for="image-upload-field">Upload an Image in Portrait Form</label>
+            <input type="file" accepts="image/png image/jpg image/jpeg image/bmp" name="image" id="image-upload-field">
             <input type="submit" value="Submit">
         </form>
+
     </div>
 
 {% endblock %}
