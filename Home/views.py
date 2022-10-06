@@ -141,6 +141,11 @@ def schools(request):
         "schools": schools
     })
 
+def contact(request):
+    users = User.objects.all()
+    return render(request, "Home/contact.html", {
+        "users": users
+    })
 
 def documentation(request):
     return render(request, "Home/Documentation.html")

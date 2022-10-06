@@ -245,6 +245,7 @@ body {
 .container {
   width: 90vw;
   margin: auto;
+  color: var(--color5);
   min-height: 80vh;
 }
 .container h1 {

@@ -17,8 +17,9 @@ urlpatterns = [
     path("schools", views.schools, name="schools"),
     path("sources", views.sources, name="sources"),
     path("documentation", views.documentation, name="documentation"),
+    path("contact", views.contact, name="contact")
 ]
 
-if settings.DEBUG:
-        urlpatterns += static(settings.MEDIA_URL,
-                              document_root=settings.MEDIA_ROOT)
+
+urlpatterns += static(settings.MEDIA_URL,
+                        document_root=settings.MEDIA_ROOT)
