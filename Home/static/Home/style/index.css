@@ -282,4 +282,7 @@ footer .copyright {
   .container .grid .left a {
     text-align: center;
   }
+  .container .grid .right {
+    width: 80%;
+  }
 }/*# sourceMappingURL=index.css.map */
