@@ -15,7 +15,7 @@ urlpatterns = [
     path("form", views.form, name="form"),
     path("about/<user>", views.member, name="member"),
     path("schools", views.schools, name="schools"),
-    path("sources", views.schools, name="sources"),
+    path("sources", views.sources, name="sources"),
     path("documentation", views.documentation, name="documentation"),
 ]
 

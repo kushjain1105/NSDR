@@ -245,7 +245,10 @@ body {
 .container {
   width: 90vw;
   margin: auto;
+  min-height: 80vh;
 }
 .container h1 {
+  margin-top: 1rem;
+  color: var(--color3);
   text-align: center;
 }/*# sourceMappingURL=document.css.map */

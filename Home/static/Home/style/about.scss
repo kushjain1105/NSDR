@@ -29,11 +29,7 @@ body {
     grid-template-columns: 1fr 1fr;
     row-gap: 10px;
     column-gap: 5px;
-    .member {
-        // Positioning and Sizing
-        
-    }
-
+    
     @include u.breakpoint(small) {
         grid-template-columns: repeat(3, 1fr);
     }
