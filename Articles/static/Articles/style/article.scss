@@ -21,6 +21,13 @@
         border-radius: 5px;
         color: white;
     }
+<<<<<<< HEAD
+=======
+    #author {
+        color: white;
+        text-decoration: underline;
+    }
+>>>>>>> 4b88539b9b6fc2b29f7b30641b2a585c83640366
     @include u.breakpoint(medium) {
         width: 75vw;
     }
