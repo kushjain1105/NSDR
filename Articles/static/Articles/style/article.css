@@ -233,10 +233,13 @@ footer .copyright {
   padding: 10px;
   border-radius: 5px;
   color: white;
+<<<<<<< HEAD
+=======
 }
 .container #author {
   color: white;
   text-decoration: underline;
+>>>>>>> 4b88539b9b6fc2b29f7b30641b2a585c83640366
 }
 @media (min-width: 43.75em) {
   .container {

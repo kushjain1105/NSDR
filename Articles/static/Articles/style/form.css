@@ -235,6 +235,8 @@ footer .copyright {
   background-color: var(--color4);
   transition: 0.2s ease-in-out;
   border: 5px solid var(--color4);
+<<<<<<< HEAD
+=======
 }
 @media (min-width: 43.75em) {
   .container {
@@ -245,4 +247,5 @@ footer .copyright {
   .container {
     width: 60vw;
   }
+>>>>>>> 4b88539b9b6fc2b29f7b30641b2a585c83640366
 }/*# sourceMappingURL=form.css.map */

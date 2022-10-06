@@ -226,7 +226,6 @@ footer .copyright {
 .container .grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
   row-gap: 50px;
   width: 100%;
   min-height: 50vh;
@@ -247,10 +246,15 @@ footer .copyright {
   transition: 0.2s ease-in-out;
 }
 .container .grid .right {
-  background-image: url("../images/Brain.jpg");
-  background-size: contain;
-  background-position-y: top;
-  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+.container .grid .right img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
 }
 @media (min-width: 43.75em) {
   .container .grid {
