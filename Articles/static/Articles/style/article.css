@@ -234,6 +234,10 @@ footer .copyright {
   border-radius: 5px;
   color: white;
 }
+.container #author {
+  color: white;
+  text-decoration: underline;
+}
 @media (min-width: 43.75em) {
   .container {
     width: 75vw;

@@ -225,6 +225,7 @@ footer .copyright {
   margin: auto auto 0 auto;
   width: 90%;
   padding: 1rem 0;
+  overflow: hidden;
 }
 .template .template-content h1 {
   text-align: center;
@@ -236,6 +237,11 @@ footer .copyright {
   height: 5px;
   position: relative;
   bottom: 20px;
+}
+@media (max-width: 29.25em) {
+  .template .template-content {
+    width: 100%;
+  }
 }
 
 body {

@@ -235,4 +235,14 @@ footer .copyright {
   background-color: var(--color4);
   transition: 0.2s ease-in-out;
   border: 5px solid var(--color4);
+}
+@media (min-width: 43.75em) {
+  .container {
+    width: 70vw;
+  }
+}
+@media (min-width: 43.75em) {
+  .container {
+    width: 60vw;
+  }
 }/*# sourceMappingURL=form.css.map */

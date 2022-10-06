@@ -21,6 +21,10 @@
         border-radius: 5px;
         color: white;
     }
+    #author {
+        color: white;
+        text-decoration: underline;
+    }
     @include u.breakpoint(medium) {
         width: 75vw;
     }

@@ -25,4 +25,11 @@
         transition: 0.2s ease-in-out;
         border: 5px solid var(--color4);
     }
+
+    @include u.breakpoint(medium) {
+        width: 70vw;
+    }
+    @include u.breakpoint(medium) {
+        width: 60vw;
+    }
 }
