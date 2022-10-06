@@ -1,6 +1,6 @@
 @forward "globals";
 @forward "template";
-
+@use "util" as u;
 
 body {
     background-color: white;
@@ -16,4 +16,11 @@ body {
         color: var(--color3);
         text-align: center;
     }
+
+    @include u.breakpoint(medium) {
+        width: 70vw;
+    } 
+    @include u.breakpoint(large) {
+        width: 60vw;
+    } 
 }
