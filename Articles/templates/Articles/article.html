@@ -15,13 +15,8 @@
             </h1>
         </div>
         <div class="content">
-<<<<<<< HEAD
             {{article.content|safe}} <br>
             <b>Written by: </b> {{article.author}}
-=======
-            {{article.content|safe}} <br> <br>
-            <b>Written by: </b> <a href="{% url 'Home:member' article.author %}" id="author">{{article.author}} </a>
->>>>>>> 4b88539b9b6fc2b29f7b30641b2a585c83640366
         </div>
         <div class="buttons">
             {% if request.user == article.author %}
