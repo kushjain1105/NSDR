@@ -18,8 +18,4 @@ urlpatterns = [
     path("sources", views.sources, name="sources"),
     path("documentation", views.documentation, name="documentation"),
     path("contact", views.contact, name="contact")
-]
-
-
-urlpatterns += static(settings.MEDIA_URL,
-                        document_root=settings.MEDIA_ROOT)
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
