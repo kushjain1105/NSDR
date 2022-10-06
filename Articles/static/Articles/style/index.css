@@ -247,6 +247,9 @@ body {
   padding: 1rem;
   width: 90vw;
   margin: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 .container li {
   padding: 0.3rem;
@@ -254,6 +257,17 @@ body {
 .container a {
   text-decoration: underline;
   color: white;
+}
+.container #create-button {
+  text-decoration: none;
+  background-color: var(--color2);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: auto;
+}
+.container #create-button:hover {
+  background-color: var(--color3);
+  transition: 0.2s ease-in-out;
 }
 @media (min-width: 43.75em) {
   .container {
