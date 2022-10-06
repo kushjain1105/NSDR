@@ -101,34 +101,38 @@ def members():
     return users
 
 def form(request):
+
     if request.method == "POST":
         if request.user.is_authenticated == False:
             return render(request, "Home/form.html", {
                 "message": "Please login/register first."
             })
 
-        # If the user is logged in and has filled in the details...
+        # If the user has already filled the form
         user = User.objects.get(username=request.user)
         member_users = members()
-        print(member_users)
         if user in member_users:
             return render(request, "Home/form.html", {
                 "message": "You have already submitted the form."
             })
-        school = School.objects.all().first()
-        bio = request.POST["bio"]
-        imgFile = request.POST["image"]
 
-        imgFile = "images/"+imgFile
-        m = Member(user=user, school=school, bio=bio, image=imgFile)
+        # If everything went well...
+        school = request.POST["school"]
+        school = School.objects.get(name=school)      
+        bio = request.POST["bio"]
+        image = request.FILES.get("image")
+        m = Member(user=user, school=school, bio=bio, member_image=image)
         m.save()
 
-        if not bio or not imgFile:
+        #If the user skipped some detail...
+        if not bio or not image or not school:
             return render(request, "Home/form.html", {
                 "message": "Please fill in the details."
             })
 
-        return HttpResponseRedirect(reverse("Home:index"))
+        return HttpResponseRedirect(reverse("Home:about"))
+
+    # If request.method == "GET"...
     schools = School.objects.all()
     return render(request, "Home/form.html", {
         "schools": schools
