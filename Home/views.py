@@ -120,12 +120,12 @@ def form(request):
         school = request.POST["school"]
         school = School.objects.get(name=school)      
         bio = request.POST["bio"]
-        image = request.FILES.get("image")
-        m = Member(user=user, school=school, bio=bio, member_image=image)
+        # image = request.FILES.get("image")
+        m = Member(user=user, school=school, bio=bio)
         m.save()
 
         #If the user skipped some detail...
-        if not bio or not image or not school:
+        if not bio or not school:
             return render(request, "Home/form.html", {
                 "message": "Please fill in the details."
             })
