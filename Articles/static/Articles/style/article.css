@@ -216,7 +216,7 @@ footer .copyright {
 }
 
 .container {
-  width: 90vw;
+  width: clang(90vw, 90%, 100vw);
   margin: 10px auto;
   color: white;
   padding: 1rem;
@@ -224,6 +224,15 @@ footer .copyright {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  overflow: hidden;
+}
+.container .content {
+  margin-bottom: 30px;
+}
+.container .content img {
+  height: 100%;
+  width: auto;
+  text-align: center;
 }
 .container .buttons {
   margin-top: auto;
@@ -233,13 +242,10 @@ footer .copyright {
   padding: 10px;
   border-radius: 5px;
   color: white;
-<<<<<<< HEAD
-=======
 }
 .container #author {
   color: white;
   text-decoration: underline;
->>>>>>> 4b88539b9b6fc2b29f7b30641b2a585c83640366
 }
 @media (min-width: 43.75em) {
   .container {

@@ -10,7 +10,7 @@ def article_titles():
     articles = Article.objects.all()
     titles = []
     for article in articles:
-        titles.append(article.title)
+        titles.append(article.title) 
     return titles
 
 def index(request):
