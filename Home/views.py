@@ -147,8 +147,12 @@ def schools(request):
 
 def contact(request):
     users = User.objects.all()
+    project_members = []
+    for user in users:
+        if user.is_staff:
+            project_members.append(user)
     return render(request, "Home/contact.html", {
-        "users": users
+        "users": project_members
     })
 
 def documentation(request):
