@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-$kw!z)(hlego!3^@=7u4u(!wd_r2s0u6*@bi!m$_(%@4=di-=o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "nsdr-webapp.herokuapp.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary_storage',
     "cloudinary",
-    "media",
+    # "media",
     'Home',
     'Articles',
 ]
