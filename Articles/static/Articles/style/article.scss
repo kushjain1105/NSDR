@@ -15,10 +15,12 @@
     overflow: hidden;
     .content {
         margin-bottom: 30px;
+        overflow: hidden;
         img {
-            height: 100%;
-            width: auto;
-            text-align: center;
+            max-width: 85vw;
+            max-height: 50vh;
+            object-fit: contain;
+            margin: 10px auto;
         }
     }
     .buttons {
