@@ -235,7 +235,10 @@ footer .copyright {
   max-height: 50vh;
   -o-object-fit: contain;
      object-fit: contain;
-  margin: 10px auto;
+  margin: 10px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .container .buttons {
   margin-top: auto;
