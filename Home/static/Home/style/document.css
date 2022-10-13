@@ -164,10 +164,13 @@ footer .footer-sections .footer-left .footer-left-grid a {
   position: relative;
   color: var(--text-color);
   padding: 0 3px;
+  font-size: 0.8rem;
 }
 footer .footer-sections .footer-right {
-  padding: 1rem;
+  padding: 1rem 0;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 footer .footer-sections .footer-right p {
   margin-bottom: 0;
@@ -181,7 +184,7 @@ footer .copyright {
     display: flex;
   }
   footer .footer-sections .footer-left .footer-left-grid a {
-    padding: 2px;
+    padding: 3px;
   }
   footer .footer-sections .footer-left .footer-left-grid a::after {
     content: "";
@@ -196,6 +199,9 @@ footer .copyright {
   footer .footer-sections .footer-left .footer-left-grid a:hover::after {
     height: 2px;
   }
+  footer .footer-sections .footer-right {
+    padding: 1rem;
+  }
 }
 @media (min-width: 56.25em) {
   footer .footer-left {
@@ -207,8 +213,12 @@ footer .copyright {
          column-gap: 5px;
     margin-left: auto;
   }
+  footer .footer-left .footer-left-grid a {
+    padding: 3px;
+  }
   footer .footer-right {
     width: 100%;
+    padding: 1.2rem;
   }
   footer .footer-right p {
     width: 80%;
@@ -225,7 +235,6 @@ footer .copyright {
   margin: auto auto 0 auto;
   width: 90%;
   padding: 1rem 0;
-  overflow: hidden;
 }
 .template .template-content h1 {
   text-align: center;
@@ -258,4 +267,14 @@ body {
   margin-top: 1rem;
   color: var(--color3);
   text-align: center;
+}
+@media (min-width: 43.75em) {
+  .container {
+    width: 70vw;
+  }
+}
+@media (min-width: 56.25em) {
+  .container {
+    width: 60vw;
+  }
 }/*# sourceMappingURL=document.css.map */

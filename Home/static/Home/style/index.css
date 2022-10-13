@@ -167,7 +167,7 @@ footer .footer-sections .footer-left .footer-left-grid a {
   font-size: 0.8rem;
 }
 footer .footer-sections .footer-right {
-  padding: 1rem;
+  padding: 1rem 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -199,6 +199,9 @@ footer .copyright {
   footer .footer-sections .footer-left .footer-left-grid a:hover::after {
     height: 2px;
   }
+  footer .footer-sections .footer-right {
+    padding: 1rem;
+  }
 }
 @media (min-width: 56.25em) {
   footer .footer-left {
@@ -215,6 +218,7 @@ footer .copyright {
   }
   footer .footer-right {
     width: 100%;
+    padding: 1.2rem;
   }
   footer .footer-right p {
     width: 80%;
@@ -253,7 +257,6 @@ footer .copyright {
 }
 .container .grid .right {
   display: flex;
-  justify-content: center;
   align-items: center;
   height: auto;
 }

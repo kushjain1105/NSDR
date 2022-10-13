@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -20,7 +21,7 @@ class Member(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
     bio = models.TextField()
-    member_image = models.ImageField(null=True, blank=True, upload_to="images/")
+    member_image = models.ImageField(upload_to="images/", blank=True, null=True)
     
     def __str__(self):
         return f"{self.user.first_name}'s Profile"

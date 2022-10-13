@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password, check_password, is_password_usable
 from django.template.defaultfilters import slugify
 from .models import *
-# Create your views here.
 
+# Create your views here.
 def usernames():
     usernames = []
     for user in User.objects.all():
@@ -57,6 +57,7 @@ def member(request, user):
     return render(request, "Home/member.html", {
         "member": member_object
     })
+
 def register(request):
     if request.method == "POST":
 
@@ -91,7 +92,6 @@ def register(request):
         return HttpResponseRedirect(reverse("Home:index"))
 
     return render(request, "Home/register.html")
-
 
 def members():
     membrs = Member.objects.all()
