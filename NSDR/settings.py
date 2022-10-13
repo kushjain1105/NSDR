@@ -13,10 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
-
+import cloudinary
+import cloudinary_storage
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    "cloudinary",
+    "media",
     'Home',
     'Articles',
 ]
@@ -135,6 +136,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 #Handling Media Files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 WHITENOISE_INDEX_FILE = True
 
 # Default primary key field type
@@ -142,5 +144,11 @@ WHITENOISE_INDEX_FILE = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dwzxklbb4',
+    'API_KEY': '818367799625277',
+    'API_SECRET': 'dASTZHpp7QWNmF4acpV8wWa4kFg'
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Custom User Model
 AUTH_USER_MODEL = 'Home.User'
