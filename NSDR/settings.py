@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     "cloudinary",
     'Home',
     'Articles',
-    'Dashboard'
+    'Dashboard',
+    'Script'
 ]
 
 MIDDLEWARE = [
