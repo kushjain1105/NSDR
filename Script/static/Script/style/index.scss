@@ -41,4 +41,11 @@
             grid-template-columns: repeat(4, 1fr);
         }
     }
+
+    @include u.breakpoint(medium) {
+        h1 {
+            text-align: left;
+            padding: 1rem 0rem;
+        }
+    }
 }

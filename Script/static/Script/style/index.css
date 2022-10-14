@@ -257,4 +257,10 @@ footer .copyright {
   .container .grid {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+@media (min-width: 43.75em) {
+  .container h1 {
+    text-align: left;
+    padding: 1rem 0rem;
+  }
 }/*# sourceMappingURL=index.css.map */
