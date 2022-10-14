@@ -148,7 +148,7 @@ footer .footer-sections {
   margin: auto;
 }
 footer .footer-sections .footer-left {
-  padding: 1rem;
+  padding: 0rem;
 }
 footer .footer-sections .footer-left .footer-left-grid {
   display: grid;
@@ -182,6 +182,9 @@ footer .copyright {
 @media (min-width: 43.75em) {
   footer .footer-sections {
     display: flex;
+  }
+  footer .footer-sections .footer-left {
+    padding: 1rem;
   }
   footer .footer-sections .footer-left .footer-left-grid a {
     padding: 3px;
