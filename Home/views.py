@@ -165,3 +165,9 @@ def documentation(request):
     
 def sources(request):
     return render(request, "Home/Sources.html")
+
+def research(request):
+    return render(request, "Home/Research.html")
+
+def outreach(request):
+    return render(request, "Home/outreach.html")

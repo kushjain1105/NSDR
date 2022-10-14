@@ -11,7 +11,7 @@ body {
     color: var(--color3);
 
     .schools {
-        width: clamp(70vw, 100%, 95vw);
+        width: clamp(80vw, 100%, 100vw);
         margin: auto;
         .school {
             margin: 20px 0;
@@ -46,7 +46,7 @@ body {
 }
 
 .member {
-    height: 40vh;
+    height: 35vh;
     width: 100%;
     margin: auto;
     overflow: hidden;
