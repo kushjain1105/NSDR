@@ -245,6 +245,9 @@ footer .copyright {
   font-size: 2rem;
   margin-bottom: 0.75rem;
 }
+.container .grid .audio-box .text .duration {
+  margin-bottom: 1rem;
+}
 @media (min-width: 43.75em) {
   .container .grid {
     grid-template-columns: repeat(3, 1fr);
