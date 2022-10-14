@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Home/style/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    {% block head %}{% endblock %}
+    <script src="{% static 'Home/js/apps.js' %}"></script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+
+            <h1>NSDR</h1>
+            <button class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+
+            <div class="links">
+                <a href="{% url 'Home:index' %}">Home</a>
+                <a href="#">Scripts</a>
+                <a href="#">Dashboard</a>
+                <a href="{% url 'Home:about' %}">About</a>
+
+                {% comment %} Login Logout Buttons {% endcomment %}
+                {% if request.user.is_authenticated == False %}
+                <a href="{% url 'Home:login' %}">Login / Register</a>
+                {% else %}
+                <a href="{% url 'Home:logout' %}">Logout</a>
+                {% endif %}
+
+
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <footer>
+        <div class="footer-sections">
+            <div class="footer-left">
+                <div class="footer-left-grid">
+                    <a href="{% url 'Articles:index' %}">Articles</a>
+                    <a href="{% url 'Articles:article' "NSDR" %}">NSDR</a>
+                    <a href="{% url 'Home:form' %}">Form</a>
+
+                    <a href="{% url 'Home:sources' %}">Sources</a>
+                    <a href="{% url 'Home:schools' %}">Schools</a>
+                    <a href="{% url 'Home:research' %}">Researh</a>
+
+                    <a href="{% url 'Home:documentation' %}">Documentation</a>
+                    <a href="{% url 'Home:contact' %}">Contact </a>
+                    <a href="{% url 'Home:outreach' %}">Out Reach</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p>
+                    NSDR is a no-cost tool to relax quickly and deeply. It comes with important benefits like improving cognitive ability and rate of learning, 
+                    reducing levels of stress and reinstrating an ability to focus and concentrate.
+                </p>
+            </div>
+        </div>
+        <div class="copyright">Subodh Public School</div>
+    </footer>
+</body>
+
+</html>
