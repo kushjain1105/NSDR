@@ -45,10 +45,14 @@ def logout_request(request):
 def about(request):
     schools = School.objects.all()
     members = Member.objects.all()
-    print(members)
+    members_list = []
+    # Filling members_list
+    for member in members:
+        members_list.append(member)
+    members_list.sort(key=lambda member:member.user.first_name)
     return render(request, "Home/about.html", {
         "schools": schools,
-        "members": members
+        "members": members_list
     })
 
 def member(request, user):
@@ -99,8 +103,6 @@ def members():
     users = []
     for member in membrs:
         users.append(member.user)
-    users.sort(key= lambda user:user.first_name)
-    print(users)
     return users
 
 def form(request):
