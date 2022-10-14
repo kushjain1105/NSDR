@@ -45,11 +45,17 @@ def logout_request(request):
 def about(request):
     schools = School.objects.all()
     members = Member.objects.all()
-    members_list = []
+    students_list = []
+    teachers_list = []
     # Filling members_list
     for member in members:
-        members_list.append(member)
-    members_list.sort(key=lambda member:member.user.first_name)
+        if member.teacher == False:
+            students_list.append(member)
+        else:
+            teachers_list.append(member)
+    students_list.sort(key=lambda member:member.user.first_name)
+    teachers_list.sort(key=lambda member:member.user.first_name)
+    members_list = teachers_list + students_list
     return render(request, "Home/about.html", {
         "schools": schools,
         "members": members_list
