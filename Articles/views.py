@@ -30,6 +30,12 @@ def create(request):
     if request.method == "POST":
         title = request.POST["title"]
         content = request.POST["content"]
+
+        if not title or not content:
+            return render(request, "Articles/create.html", {
+                "message": "Incomplete Details."
+            })
+
         a = Article(author=request.user,date=date.today(), title=title, content=content)
         a.save()
         return HttpResponseRedirect(reverse("Articles:index"))
