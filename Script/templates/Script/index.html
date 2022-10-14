@@ -7,7 +7,12 @@
 {% block body %}
 <div class="container">
     <h1>Scripts</h1>
-
+    {% for script in scripts %}
+        <audio controls>
+            <source src="{{script.audio.url}}" type="audio/ogg">
+            <source src="{{script.audio.url}}" type="audio/mpeg">
+        </audio>
+    {% endfor %}
     <h3>Coming Soon!</h3>
 </div>
 {% endblock %}
