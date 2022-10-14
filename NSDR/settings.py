@@ -15,6 +15,8 @@ import os
 import dj_database_url
 import cloudinary
 import cloudinary_storage
+import cloudinary.uploader
+import cloudinary.api
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -150,6 +152,12 @@ CLOUDINARY_STORAGE = {
     'API_KEY': '818367799625277',
     'API_SECRET': 'dASTZHpp7QWNmF4acpV8wWa4kFg'
 }
+cloudinary.config( 
+  cloud_name = "dwzxklbb4", 
+  api_key = "818367799625277", 
+  api_secret = "dASTZHpp7QWNmF4acpV8wWa4kFg",
+  secure = True
+)
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Custom User Model
 AUTH_USER_MODEL = 'Home.User'
