@@ -1,0 +1,13 @@
+@forward "globals";
+@use "util" as u;
+
+.container {
+    // background-color: white;
+    width: 60vw;
+    margin: 20px auto;
+    height: 60vh;
+
+    ul li span {
+        color: var(--color5);
+    }
+}
