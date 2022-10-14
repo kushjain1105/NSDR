@@ -148,7 +148,7 @@ footer .footer-sections {
   margin: auto;
 }
 footer .footer-sections .footer-left {
-  padding: 1rem;
+  padding: 1rem 0rem;
 }
 footer .footer-sections .footer-left .footer-left-grid {
   display: grid;
@@ -164,10 +164,10 @@ footer .footer-sections .footer-left .footer-left-grid a {
   position: relative;
   color: var(--text-color);
   padding: 0 3px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 footer .footer-sections .footer-right {
-  padding: 1rem;
+  padding: 1rem 0rem;
   width: 100%;
 }
 footer .footer-sections .footer-right p {
@@ -180,6 +180,9 @@ footer .copyright {
 @media (min-width: 43.75em) {
   footer .footer-sections {
     display: flex;
+  }
+  footer .footer-sections .footer-left {
+    padding: 1rem;
   }
   footer .footer-sections .footer-left .footer-left-grid a {
     padding: 2px;
