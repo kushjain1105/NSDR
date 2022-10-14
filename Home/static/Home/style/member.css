@@ -247,8 +247,9 @@ footer .copyright {
 .grid {
   height: 100%;
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   row-gap: 20px;
+  min-height: 40vh;
 }
 .grid .left {
   display: flex;
@@ -274,7 +275,6 @@ footer .copyright {
   .grid {
     margin: 50px auto;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
     -moz-column-gap: 20px;
          column-gap: 20px;
   }
@@ -285,6 +285,6 @@ footer .copyright {
   }
   .grid .left img {
     height: 100%;
-    width: auto;
+    width: 100%;
   }
 }/*# sourceMappingURL=member.css.map */

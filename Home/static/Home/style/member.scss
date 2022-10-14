@@ -23,8 +23,9 @@
 .grid {
     height: 100%;
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     row-gap: 20px;
+    min-height: 40vh;
     .left {
         display: flex;
         align-items: center;
@@ -50,15 +51,15 @@
     @include u.breakpoint(medium) {
         margin: 50px auto;
         grid-template-columns: repeat(2 ,1fr);
-        grid-template-rows: 1fr;
         column-gap: 20px;
     }
     @include u.breakpoint(large) {
         grid-template-rows: 60vh;
+
         .left {
             img {
                 height: 100%;
-                width: auto;
+                width: 100%;
             }   
         }
     }
