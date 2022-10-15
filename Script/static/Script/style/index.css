@@ -226,6 +226,12 @@ footer .copyright {
 .container h1 {
   text-align: center;
 }
+@media (min-width: 43.75em) {
+  .container h1 {
+    text-align: left;
+    padding: 1rem 0rem;
+  }
+}
 .container .grid {
   display: grid;
   grid-template-columns: 1fr;
