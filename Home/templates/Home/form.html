@@ -6,6 +6,7 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'Home/style/form.css' %}">
+    <script src="{% static 'Home/js/form.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -17,7 +18,9 @@
             {% if request.user.is_authenticated == False %}        
             <b>Note:</b> Please login or register first before completing this form. <br>
             {% endif %}
-            {% if message %} {{message}} {% endif %}
+            <div class="message">
+                {% if message %} {{message}} {% endif %}
+            </div>
         </div>
 
         <form action="{% url 'Home:form' %}" method="post" enctype="multipart/form-data">
@@ -28,7 +31,7 @@
                     <option value="{{ school.name }}">{{school.name}} </option>
                 {% endfor %}
             </select>
-            <textarea name="bio" id="" cols="30" rows="10" placeholder="A Short Introduction or Bio"></textarea>
+            <textarea name="bio" id="intro" cols="30" rows="10" placeholder="A Short Introduction or Bio"></textarea>
 
             <!-- Here Starts the Image Upload Field -->
             <label for="image-upload-field">Upload an Image in Portrait Form</label>

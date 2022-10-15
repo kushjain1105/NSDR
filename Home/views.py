@@ -47,6 +47,7 @@ def about(request):
     members = Member.objects.all()
     students_list = []
     teachers_list = []
+
     # Filling members_list
     for member in members:
         if member.teacher == False:
