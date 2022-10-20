@@ -18,7 +18,7 @@ class School(models.Model):
         
 class Member(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # school = models.ForeignKey(School, on_delete=models.CASCADE)
+    school = models.ForeignKey(School, on_delete=models.CASCADE, null=True)
     bio = models.TextField()
     member_image = models.ImageField(upload_to="images/", blank=True)
     teacher = models.BooleanField(default=False)

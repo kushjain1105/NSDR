@@ -20,6 +20,7 @@ def sort_articles():
         articlesList.append(article)
     articlesList.sort(key=lambda article:article.date, reverse=True)
     return articlesList
+    
 def index(request):
     articles = sort_articles()
     return render(request, "Articles/index.html", {
