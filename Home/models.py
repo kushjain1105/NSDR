@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from cloudinary.models import CloudinaryField
-from Articles.models import Article
+from Articles.modles import *
 # Create your models here.
 
 class User(AbstractUser):
@@ -28,7 +28,7 @@ class Member(models.Model):
     
 
 # Source model done
-class Source(models.Model):
+class Source(modles.Model):
     title =  models.CharField(max_length=200)
     sourceURL = models.URLField()
     articles = models.ManyToManyField(Article,blank=True, related_name="sources")
