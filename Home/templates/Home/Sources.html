@@ -6,6 +6,9 @@
 {% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{% static 'Home/style/document.css' %}">
+    <style>
+
+    </style>
 {% endblock %}
 
 {% block body %}
@@ -17,6 +20,36 @@
 </div>
 
 <div class="container">
-    <h1>No Sources Available Yet</h1>
+    {% if message %}
+        <h1>
+            {{message}}
+        </h1>
+    {% endif %}
+
+    <h1>Aritcle Soures</h1>
+    <ul>
+
+       {% for article in articles %}
+       
+            {% if article.sources.all.len != 0 %}
+                <li>For Article <a href="{% url 'Articles:article' article.title %}">"{{article.title}}": </a> <br>
+                    
+                <ul>
+                    {% for source in article.sources.all %}
+                        <li><a href="{{source.sourceURL}}">{{source.sourceURL}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+       {% endfor %}
+
+    </ul>
+
+    <h1> General Sources</h1>
+
+    <ul>
+        {% for source in sources %}
+            <li>For {{source.title}}: <a href="{{source.sourceURL}}">{{source.sourceURL}}</a></li>
+        {% endfor %}
+    </ul>
 </div>
 {% endblock %}

@@ -199,7 +199,28 @@ def documentation(request):
     return render(request, "Home/Documentation.html")
     
 def sources(request):
-    return render(request, "Home/Sources.html")
+    sourceObjects = Source.objects.all()
+    if len(sourceObjects) == 0:
+        message = "No Sources Available Yet!"
+        return render(request, "Home/Sources.html", {
+            "message": message
+        })
+    
+    articleObjects = Article.objects.all()
+    articles = []
+    for article in articleObjects:
+        if len(article.sources.all()) > 0:
+            articles.append(article)
+    
+    generalSources = []
+    for source in sourceObjects:
+        if len(source.articles.all()) == 0:
+            generalSources.append(source)
+
+    return render(request, "Home/Sources.html", {
+        "sources": generalSources,
+        "articles": articles
+    })
 
 def research(request):
     return render(request, "Home/Research.html")
