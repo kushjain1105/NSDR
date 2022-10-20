@@ -2,9 +2,11 @@
 @use "util" as u;
 
 .container {
-    width: 85vw;
+    max-width: 85vw;
     margin: 20px auto;
     min-height: 90vh;
+    // overflow: hidden;
+    background-color: aqua;
     h1 {
         text-align: center;
 
@@ -13,12 +15,18 @@
             padding: 1rem 0rem;
         }
     }
+
     .grid {
+        width: 85vw;
+        margin: auto;
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 20px;
+        background-color: red;
+        padding: 1rem;
 
         .audio-box{
+            width: 100%;
             margin: auto;
             min-height: 25vh;
             background-color: var(--color3);
@@ -33,9 +41,10 @@
                     font-size: 2rem;
                     margin-bottom: 0.75rem;
                } 
-               .duration {
-                margin-bottom: 1rem;
-               }
+            }
+            audio {
+                padding: 0;
+                width: 100%;
             }
         }
 
