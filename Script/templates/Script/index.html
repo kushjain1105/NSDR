@@ -3,6 +3,27 @@
 {% block title %}Scripts{% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{% static 'Script/style/index.css' %}">
+    <style>
+        .type {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        .type p {
+            padding: 0.2rem 0.4rem;
+            border-radius: 5px;        
+        }
+        .NSDR {
+            background-color: #5bc3d0;
+        }
+
+        .Yoga-Nidra {
+            background-color: #42a053;
+        }
+
+        .Self-Hypnosis {
+            background-color: #ae1789;
+        }
+    </style>
 {% endblock %}
 {% block body %}
 <div class="container">
@@ -15,6 +36,11 @@
             <!-- Details of Script -->
             <div class="text">
                 <div class="name">{{script.name}}</div>
+                <div class="type">
+                    <p class="{{script.nsdrType}}">
+                        {{script.nsdrType}}
+                    </p>
+                </div>
             </div>
 
             <audio src="{{script.audio.url}}" controls controlsList="nodownload"></audio>
