@@ -3,4 +3,4 @@ from .models import *
 # Register your models here.
 admin.site.register(User)
 admin.site.register(School)
-admin.site.register(Source)
+admin.site.register(Member)

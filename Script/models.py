@@ -1,6 +1,7 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 
+# Create your models here.
 class Script(models.Model):
     audio = CloudinaryField("Audio", resource_type="auto")
     name = models.CharField(max_length=250)
