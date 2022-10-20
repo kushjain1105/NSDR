@@ -6,7 +6,6 @@
     margin: 20px auto;
     min-height: 90vh;
     // overflow: hidden;
-    background-color: aqua;
     h1 {
         text-align: center;
 
@@ -22,7 +21,6 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 20px;
-        background-color: red;
         padding: 1rem;
 
         .audio-box{

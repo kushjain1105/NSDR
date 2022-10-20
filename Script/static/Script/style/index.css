@@ -223,7 +223,6 @@ footer .copyright {
   max-width: 85vw;
   margin: 20px auto;
   min-height: 90vh;
-  background-color: aqua;
 }
 .container h1 {
   text-align: center;
@@ -240,7 +239,6 @@ footer .copyright {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
-  background-color: red;
   padding: 1rem;
 }
 .container .grid .audio-box {
