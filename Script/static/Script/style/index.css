@@ -222,6 +222,7 @@ footer .copyright {
 .container {
   width: 85vw;
   margin: 20px auto;
+  min-height: 90vh;
 }
 .container h1 {
   text-align: center;
