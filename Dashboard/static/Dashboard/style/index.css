@@ -220,10 +220,21 @@ footer .copyright {
 }
 
 .container {
-  width: 60vw;
+  width: 80vw;
   margin: 20px auto;
-  height: 60vh;
+  min-height: 100vh;
+}
+.container ul {
+  list-style: none;
 }
 .container ul li span {
   color: var(--color5);
+}
+.container .previous-reports a {
+  text-decoration: underline;
+}
+@media (min-width: 43.75em) {
+  .container {
+    width: 60vw;
+  }
 }/*# sourceMappingURL=index.css.map */

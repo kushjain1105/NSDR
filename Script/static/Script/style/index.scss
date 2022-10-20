@@ -2,18 +2,29 @@
 @use "util" as u;
 
 .container {
-    width: 85vw;
+    max-width: 85vw;
     margin: 20px auto;
-
+    min-height: 90vh;
+    // overflow: hidden;
     h1 {
         text-align: center;
+
+        @include u.breakpoint(medium) {
+            text-align: left;
+            padding: 1rem 0rem;
+        }
     }
+
     .grid {
+        width: 85vw;
+        margin: auto;
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 20px;
+        padding: 1rem;
 
         .audio-box{
+            width: 100%;
             margin: auto;
             min-height: 25vh;
             background-color: var(--color3);
@@ -28,9 +39,10 @@
                     font-size: 2rem;
                     margin-bottom: 0.75rem;
                } 
-               .duration {
-                margin-bottom: 1rem;
-               }
+            }
+            audio {
+                padding: 0;
+                width: 100%;
             }
         }
 
@@ -42,10 +54,13 @@
         }
     }
 
+<<<<<<< HEAD
     @include u.breakpoint(medium) {
         h1 {
             text-align: left;
             padding: 1rem 0rem;
         }
     }
+=======
+>>>>>>> c3eb90ed377cb32b6ad6997b85fb916eab02dc1f
 }

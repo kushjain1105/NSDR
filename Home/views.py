@@ -47,6 +47,7 @@ def about(request):
     members = Member.objects.all()
     students_list = []
     teachers_list = []
+
     # Filling members_list
     for member in members:
         if member.teacher == False:
@@ -148,7 +149,6 @@ def form(request):
     return render(request, "Home/form.html", {
         "schools": schools
     })
-
 
 def schools(request):
     schools = School.objects.all()

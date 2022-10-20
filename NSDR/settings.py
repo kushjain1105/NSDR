@@ -158,6 +158,7 @@ cloudinary.config(
   api_secret = "dASTZHpp7QWNmF4acpV8wWa4kFg",
   secure = True
 )
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Custom User Model
 AUTH_USER_MODEL = 'Home.User'

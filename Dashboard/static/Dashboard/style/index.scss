@@ -2,12 +2,27 @@
 @use "util" as u;
 
 .container {
-    // background-color: white;
-    width: 60vw;
+    width: 80vw;
     margin: 20px auto;
-    height: 60vh;
+    min-height: 100vh;
 
-    ul li span {
-        color: var(--color5);
+    ul {
+        list-style: none;
+
+        li {
+            span {
+                color: var(--color5);
+            }
+        }
+    }
+
+    .previous-reports{
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    @include u.breakpoint(medium) {
+        width: 60vw;
     }
 }
