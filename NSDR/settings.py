@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'Home',
     'Articles',
     'Dashboard',
-    'Script'
+    'Script',
+    'Research'
 ]
 
 MIDDLEWARE = [

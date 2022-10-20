@@ -1,0 +1,103 @@
+@use "../util" as u;
+
+nav {
+    background-color: var(--color2);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    min-height: 3.125em;
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+    }
+    .links {
+        position: relative;
+        display: none;
+        flex-direction: column;
+
+        a {
+            color: var(--text-color);
+            text-align: center;
+            padding: 10px 5px;
+            border: 1px solid white;
+        }
+    }
+
+    @include u.breakpoint(medium){
+        .navbar {
+            flex-direction: row;
+            width: 90%;
+            margin: auto;
+        }
+        
+        .toggle-button, .bar, .toggle-button:hover {
+            display:none;
+        }
+
+        .links {
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+
+            a {
+                position: relative;
+                border:none;
+                padding: 5px 10px;
+                margin: 0 10px;
+            }
+            a::after {
+                content: "";
+                position: absolute;
+                background-color: var(--text-color);
+                height: 0;
+                width: 100%;
+                left: 0;
+                bottom: 0px;
+                transition: 0.3s ease-in-out;
+            }
+            a:hover::after {
+                height: 3px;
+            }
+        }
+
+    }
+    h1 {
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+
+    .toggle-button {
+        position: absolute;
+        top: 1rem;
+        right: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 35px;
+        height: 18px;
+        border: none;
+        background-color: transparent;
+
+        .bar {
+            height: 3px;
+            width: 100%;
+            background-color: var(--text-color);    
+        }
+    }
+
+    .toggle-button:hover {
+        cursor: pointer;
+    }
+
+   
+    .active {
+        display: flex;
+    }
+}
