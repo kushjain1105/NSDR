@@ -40,6 +40,7 @@ a, a:visited, a:active {
   --color3: hsl(242, 50%, 20%);
   --color4: hsl(242, 50%, 25%);
   --color5: hsl(242, 50%, 30%);
+  --color6: hsl(242, 50%, 40%);
   --text-color: white;
 }
 
@@ -265,6 +266,25 @@ footer .copyright {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+}
+.grid .right .bottom {
+  margin-top: auto;
+}
+.grid .right .contact {
+  position: relative;
+  bottom: 15px;
+}
+.grid .right .change {
+  margin-top: 15px;
+  background-color: var(--color5);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+.grid .right .change:hover {
+  transition: 0.2s ease-in-out;
+  background-color: var(--color3);
 }
 @media (min-width: 29.25em) {
   .grid .right {

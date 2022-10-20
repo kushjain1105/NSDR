@@ -18,7 +18,12 @@
                 <p id="bio">
                     {{member.bio}}
                 </p>
-                <b>Contact {{member.user}}: </b> {{member.user.email}}
+                <div class="bottom">
+                   <span class="contact"><b>Contact {{member.user}}: </b> {{member.user.email}}</span> <br>
+                    {% if request.user == member.user %}
+                    <a href="{% url 'Home:change_profile' %}" class="change">Change Profile</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

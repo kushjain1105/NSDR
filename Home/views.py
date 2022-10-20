@@ -112,6 +112,30 @@ def members():
         users.append(member.user)
     return users
 
+def change_profile(request):
+    member = Member.objects.get(user=request.user)
+
+    if request.method == "POST":
+        school = School.objects.get(name=request.POST["school"])
+
+        image = request.FILES.get("image")
+        bio = request.POST["bio"]
+
+        member.school = school
+
+        if image:
+            member.member_image = image
+        member.bio = bio
+        member.save()
+        return HttpResponseRedirect(reverse("Home:member", args=(member.user,)))
+
+    return render(request, "Home/change_profile.html", {
+        "schools": School.objects.all(),
+        "bio": member.bio,
+        "image": member.member_image,
+        "school": member.school
+    })
+
 def form(request):
 
     if request.method == "POST":
