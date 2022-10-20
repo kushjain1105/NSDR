@@ -4,14 +4,16 @@
 
 .container {
     width: 90%;
-    margin: 20px auto;
-    min-height: 90vh;
+    margin: 0px auto;
+    min-height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .grid {
         // Grid Settings
+        position: relative;
+        bottom: 20px;
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 50px;
