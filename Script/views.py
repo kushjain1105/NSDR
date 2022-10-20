@@ -12,7 +12,7 @@ def sortScripts():
 
     scriptObjects = []
     for script in scriptNames:
-        scriptObjects.append(Script.objects.get(name=scriptNames))
+        scriptObjects.append(Script.objects.get(name=script))
     return scriptObjects
 
 def index(request):
