@@ -150,7 +150,6 @@ def form(request):
         "schools": schools
     })
 
-
 def schools(request):
     schools = School.objects.all()
     return render(request, "Home/schools.html", {
