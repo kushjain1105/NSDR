@@ -12,6 +12,8 @@ def sortScripts():
         counter += 1
         if counter == 9:
             scriptNames.sort()
+            scriptNames.append(script.name)
+            continue
         scriptNames.append(script.name)
 
     scriptObjects = []
