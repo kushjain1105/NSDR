@@ -1,0 +1,33 @@
+@forward "globals";
+@use "util" as u;
+
+.container {
+    width: 90vw;
+    min-height: 90vh;
+    margin: 20px auto;
+    .grid {
+        display: grid;
+        overflow: hidden;
+        grid-gap: 10px;
+        grid-template-columns: 1fr;
+
+        .image {
+            min-height: 25vh;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+            }
+        }
+        @include u.breakpoint(medium) {
+            grid-template-columns: repeat(2 ,1fr);
+        }
+        @include u.breakpoint(large) {
+            grid-template-columns: repeat(3 ,1fr);
+        }
+    }
+    @include u.breakpoint(medium) {
+        width: 60vw;
+    }
+}
