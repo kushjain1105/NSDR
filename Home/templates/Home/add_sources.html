@@ -1,0 +1,23 @@
+{% extends 'Home/layout.html' %}
+{% load static %}
+{% block title %}Add Sources{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Home/style/add_sources.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1>Add Source</h1>
+        {% if message %}
+            {{message}}
+        {% endif %}
+        <form action="{% url 'Home:add_sources' %}" method="post">
+            {% csrf_token %}
+            <div class="note">
+                <b>Note:</b> Please add sources as a comma separated list. Do not forget "https://" before source URL.
+                <input required type="text" placeholder="Title" name="title">
+                <input  placeholder="Source" required name="source" type="url">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+{% endblock %}

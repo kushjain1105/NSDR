@@ -7,7 +7,24 @@
 {% block head %}
     <link rel="stylesheet" href="{% static 'Home/style/document.css' %}">
     <style>
-
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        .buttons {
+            margin-top: auto;
+            margin-bottom
+        }
+        .buttons a{
+            background-color: #121132;
+            padding: 0.5rem;
+            border-radius: 5px;
+            color: white;
+        }
+        .buttons a:hover {
+            transition: 0.2s ease-in-out;
+            background-color: #292673;
+        }
     </style>
 {% endblock %}
 
@@ -51,5 +68,11 @@
             <li>For {{source.title}}: <a href="{{source.sourceURL}}">{{source.sourceURL}}</a></li>
         {% endfor %}
     </ul>
+
+    <div class="buttons">
+        {% if request.user.is_staff or request.user.is_superuser %}
+            <a href="{% url 'Home:add_sources' %}">Add Sources</a>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

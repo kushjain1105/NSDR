@@ -221,3 +221,28 @@ def sources(request):
         "sources": generalSources,
         "articles": articles
     })
+
+def add_sources(request):
+    if request.method == "POST":
+        title = request.POST["title"]
+        source = request.POST["source"]
+        if not source or not title:
+            return render(request, "Home/add_sources.html", {
+                "message": "Please fill in the details."
+            })
+        source_objects = Source.objects.all()
+        source_list = []
+
+        for sourc in source_objects:
+            source_list.append(sourc)
+
+        for sourc in source_list:
+            if source == sourc.sourceURL and title == sourc.title:
+                return render(request, "Home/add_sources.html", {
+                    "message": "Source already exists."
+                }) 
+
+        s = Source(sourceURL=source, title=title)
+        s.save()
+        return HttpResponseRedirect(reverse("Home:sources"))
+    return render(request, "Home/add_sources.html") 

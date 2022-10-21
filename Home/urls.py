@@ -16,5 +16,6 @@ urlpatterns = [
     path("sources", views.sources, name="sources"),
     path("documentation", views.documentation, name="documentation"),
     path("contact", views.contact, name="contact"),
-    path("change_profile", views.change_profile, name="change_profile")
+    path("change_profile", views.change_profile, name="change_profile"),
+    path("add_sources", views.add_sources, name="add_sources"),
 ]
