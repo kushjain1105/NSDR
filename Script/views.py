@@ -10,15 +10,14 @@ def sortScripts():
     counter = 0
     for script in scripts:
         counter += 1
-        if counter > 9:
-            break
-        
+        if counter == 9:
+            scriptNames.sort()
         scriptNames.append(script.name)
-    scriptNames.sort()
 
     scriptObjects = []
     for script in scriptNames:
         scriptObjects.append(Script.objects.get(name=script))
+
     return scriptObjects
 
 def index(request):
