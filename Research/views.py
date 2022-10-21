@@ -49,7 +49,7 @@ def add_outreach(request):
                 "message": "Please fill in the details."
             })
         
-        I = Institution(name=name, address=address,image=null, imageURL=imageURL, description=description)
+        I = Institution(name=name, address=address, imageURL=imageURL, description=description)
         I.save()
         return HttpResponseRedirect(reverse("Research:outreach"))
     return render(request, "Research/add_outreach.html")
