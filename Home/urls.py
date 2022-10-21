@@ -16,7 +16,5 @@ urlpatterns = [
     path("sources", views.sources, name="sources"),
     path("documentation", views.documentation, name="documentation"),
     path("contact", views.contact, name="contact"),
-    path("research", views.research, name="research"),
-    path("outreach", views.outreach, name="outreach"),
     path("change_profile", views.change_profile, name="change_profile")
 ]

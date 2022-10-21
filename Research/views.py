@@ -28,3 +28,9 @@ def load_images(request, project_title):
     return render(request, "Research/images.html", {
         "images": images
     })
+
+def outreach(request):
+    institutions = Institution.objects.all()
+    return render(request, "Research/outreach.html", {
+        "institutions": institutions
+    })

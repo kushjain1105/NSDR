@@ -221,9 +221,3 @@ def sources(request):
         "sources": generalSources,
         "articles": articles
     })
-
-def research(request):
-    return render(request, "Home/Research.html")
-
-def outreach(request):
-    return render(request, "Home/outreach.html")

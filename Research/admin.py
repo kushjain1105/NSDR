@@ -4,3 +4,4 @@ from Research.models import *
 admin.site.register(Project)
 admin.site.register(Paper)
 admin.site.register(Image)
+admin.site.register(Institution)
