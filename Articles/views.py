@@ -38,6 +38,7 @@ def create(request):
     if request.method == "POST":
         title = request.POST["title"]
         content = request.POST["content"]
+        sources = request.POST["sources"]
 
         if not title or not content:
             return render(request, "Articles/create.html", {
@@ -46,6 +47,15 @@ def create(request):
 
         a = Article(author=request.user,date=date.today(), title=title, content=content)
         a.save()
+
+        if sources:
+            sources = sources.split(",")
+
+            for source in sources:
+                s = Source(sourceURL=source)
+                s.save()
+                s.articles.add(a)
+                s.save()
         return HttpResponseRedirect(reverse("Articles:index"))
     return render(request, "Articles/create.html")
 
@@ -73,5 +83,9 @@ def edit(request, title):
     
 
 def delete(request, title):
-    articles = Article.objects.filter(title=title).delete()
+    Article.objects.filter(title=title).delete()
+    sources = Source.objects.all()
+    for source in sources:
+        if source.title == "" and len(source.articles.all()) == 0:
+            source.delete()
     return HttpResponseRedirect(reverse("Articles:index"))

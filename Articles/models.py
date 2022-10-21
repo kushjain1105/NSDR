@@ -13,10 +13,10 @@ class Article(models.Model):
         return f"Article: {self.title}"
     
 class Source(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, blank=True)
     sourceURL = models.URLField()
     articles = models.ManyToManyField(Article, related_name="sources", blank=True)
 
     def __str__(self):
-        return f"Source: {self.title}"
+        return f"Source: {self.sourceURL}"
     
