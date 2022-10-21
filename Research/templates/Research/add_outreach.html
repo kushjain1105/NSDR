@@ -1,0 +1,24 @@
+{% extends 'Home/layout.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Research/style/add_outreach.css' %}">
+{% endblock %}
+{% block body %}
+
+    <div class="container">
+        <h1>Add to Outreach</h1>
+        <div class="message">
+            {% if message %}
+                {{ message }}
+            {% endif %}
+        </div>
+        <form action="{% url 'Research:add_outreach' %}" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="Name of the Institution" name="name" required>
+            <input type="text" placeholder="Address of the Institution" name="address" required>
+            <input type="url" placeholder="Image URL" name="imageURL" required>
+            <textarea name="description" id="description" cols="30" rows="10" placeholder="Description" required></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}

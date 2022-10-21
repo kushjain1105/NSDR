@@ -3,6 +3,29 @@
 {% block title %}Outreach{% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{% static 'Home/style/schools.css' %}">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        .buttons {
+            margin-top: auto;
+        }
+
+        .buttons a {
+            cursor: pointer;
+            color: white;
+            background-color: #121132;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .buttons a:hover {
+            background-color: #292673;
+            transition: 0.2s ease-in-out;
+        }
+
+    </style>
 {% endblock %}
 {% block body %}
 <div class="template">
@@ -16,7 +39,11 @@
         {% for institution in institutions %}
             <div class="school">
                 <div class="image">
+                    {% if institution.imageURL %}
+                    <img src="{{institution.imageURL}}">
+                    {% else %}
                     <img src="{{institution.image.url}}">
+                    {% endif %}
                 </div>
                 <div class="description">
                     <h1>
@@ -27,5 +54,10 @@
             </div>
         {% endfor %}
     </div>
+    {% if request.user.is_staff or request.user.is_superuser %}
+    <div class="buttons">
+        <a href="{% url 'Research:add_outreach' %}">Add to Outreach</a>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

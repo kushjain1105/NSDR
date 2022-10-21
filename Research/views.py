@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from .models import *
 # Create your views here.
 def index(request):
@@ -34,3 +36,20 @@ def outreach(request):
     return render(request, "Research/outreach.html", {
         "institutions": institutions
     })
+
+def add_outreach(request):
+    if request.method == "POST":
+        name = request.POST["name"]
+        address = request.POST["address"]
+        imageURL = request.POST["imageURL"]
+        description = request.POST["description"]
+
+        if not name or not address or not imageURL or not description:
+            return render(request, "Research/add_outreach.html", {
+                "message": "Please fill in the details."
+            })
+        
+        I = Institution(name=name, address=address,image=null, imageURL=imageURL, description=description)
+        I.save()
+        return HttpResponseRedirect(reverse("Research:outreach"))
+    return render(request, "Research/add_outreach.html")

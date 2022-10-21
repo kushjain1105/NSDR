@@ -29,7 +29,7 @@ class Institution(models.Model):
     address = models.CharField(max_length=250)
     image = models.ImageField(upload_to="outreach/", blank=True)
     description = models.TextField()
-
+    imageURL = models.URLField(blank=True)
     def __str__(self):
         return f"Outreach: {self.name}"
     

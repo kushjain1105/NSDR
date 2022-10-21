@@ -9,4 +9,5 @@ urlpatterns = [
     path("project/paper/<id>", views.load_paper, name="paper"),
     path("project/images/<project_title>", views.load_images, name="images"),
     path("outreach", views.outreach, name="outreach"),
+    path("add_outreach", views.add_outreach, name="add_outreach"),
 ]

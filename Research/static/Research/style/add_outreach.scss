@@ -1,0 +1,38 @@
+@forward "globals";
+@use "util" as u;
+
+.container {
+    width: 90vw;
+    margin: 20px auto;
+    min-height: 90vh;
+
+    form {
+        input {
+            width: 100%;
+            margin: 8px auto;
+            border-radius: 5px;
+            border: 5px solid var(--color5);
+            padding: 10px;
+        }
+        
+        input[type=submit] {
+            background-color: var(--color5);
+            cursor: pointer;
+            color: white;
+        }
+        input[type=submit]:hover {
+            border: 5px solid var(--color3);
+            transition: 0.2s ease-in-out;
+            background-color: var(--color3);
+        }
+        textarea {
+            border-radius: 5px;
+            border: 5px solid var(--color5);
+            padding: 10px;
+            width: 100%;
+        }
+    }
+    @include u.breakpoint(medium) {
+        width: 50vw;
+    }
+}
