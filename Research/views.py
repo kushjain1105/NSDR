@@ -20,3 +20,11 @@ def load_paper(request, id):
     return render(request, "Research/paper.html",{
         "paper": paper
     })
+
+
+def load_images(request, project_title):
+    project = Project.objects.get(title=project_title)
+    images = Image.objects.filter(project=project)
+    return render(request, "Research/images.html", {
+        "images": images
+    })
