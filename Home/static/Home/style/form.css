@@ -223,6 +223,7 @@ footer .copyright {
 .container {
   width: clamp(60vw, 90%, 90vw);
   margin: 20px auto;
+  min-height: 90vh;
 }
 .container input, .container textarea, .container select {
   width: 100%;
