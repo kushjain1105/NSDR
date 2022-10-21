@@ -1,8 +1,31 @@
 {% extends 'Home/layout.html' %}
+{% load static %}
 {% block title %}Outreach{% endblock %}
 {% block head %}
-    {% comment %} <link rel="stylesheet" href=""> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'Home/style/schools.css' %}">
 {% endblock %}
 {% block body %}
-    <h1>Outreach</h1>
+<div class="template">
+    <div class="template-content">
+        <h1>Outreach</h1>
+        <hr>
+    </div>
+</div>
+<div class="container">
+    <div class="schools">
+        {% for institution in institutions %}
+            <div class="school">
+                <div class="image">
+                    <img src="{{institution.image.url}}">
+                </div>
+                <div class="description">
+                    <h1>
+                        {{ institution.name }}
+                    </h1>
+                    {{institution.description}}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

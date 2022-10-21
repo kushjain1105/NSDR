@@ -6,18 +6,21 @@
 {% endblock %}
 {% block body %}
     <div class="container">
-        <h1>{{project.title}}</h1>
+        <h1>{{project.title}} </h1>
 
         <div class="articles">
+
             <h2>Papers</h2>
+            <u>Date:</u> {{project.date}} <br>
             {% for paper in papers %}
                 <a href="{% url 'Research:paper' paper.id %}">{{paper.title}}</a> <br>
             {% endfor %}
         </div>
+
         <div class="images">
-            {% comment %} Yet to be done! {% endcomment %}
             <a href="{% url 'Research:images' project.title %}">Images</a>
         </div>
+        
         <div class="members">
             <h2>Members</h2>
             {% for member in project.members.all %}
