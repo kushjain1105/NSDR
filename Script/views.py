@@ -4,23 +4,25 @@ from django.urls import reverse
 from .models import *
 
 # Create your views here.
+
+def f(script):
+    script_list = script.split()
+    return int(script_list[1])
 def sortScripts():
-    scripts = Script.objects.all()
-    scriptNames = []
-    counter = 0
-    for script in scripts:
-        counter += 1
-        if counter == 9:
-            scriptNames.sort()
-            scriptNames.append(script.name)
-            continue
-        scriptNames.append(script.name)
+    scripts_query_set = Script.objects.all()
+    script_numbers = []
+    scripts_list = []
+    
+    for script in scripts_query_set:
+        scripts_list.append(script.name)
 
-    scriptObjects = []
-    for script in scriptNames:
-        scriptObjects.append(Script.objects.get(name=script))
+    scripts_list.sort(key=f)
+    script_objects = []
 
-    return scriptObjects
+    for script in scripts_list:
+        script_item = Script.objects.get(name=script)
+        script_objects.append(script_item)
+    return script_objects
 
 def index(request):
     scripts = sortScripts()
