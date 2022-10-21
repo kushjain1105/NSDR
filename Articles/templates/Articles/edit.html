@@ -2,24 +2,43 @@
 {% load static %}
 
 {% block title %}
-    Edit Article
+Edit Article
 {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'Articles/style/form.css' %}">
+<link rel="stylesheet" href="{% static 'Articles/style/form.css' %}">
 {% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1>Edit Article: {{article.title}}</h1>
-        {% if message %}
-            <b>Note:</b> {{message}}
+<div class="container">
+    <h1>Edit Article: {{article.title}}</h1>
+    {% if message %}
+    <b>Note:</b> {{message}}
+    {% endif %}
+    <form action="{% url 'Articles:edit' article.title %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Title" name="title" value="{{article.title}}">
+        <textarea name="content" id="contect-box" cols="30" rows="10"
+            placeholder="Content">{{article.content}}</textarea>
+
+        <!-- Adding Sources -->
+        <h1>Add Sources</h1>
+        <div class="note"><b>Note:</b>Please add links of sources in a comma separated list. Do not forget to add
+            "https://" before the url link. Include sources which are not already present.
+        </div>
+
+        {% if sources_length == 0 %}
+            <b>Sources:</b> None 
+
+        {% else %}
+            <b>Sources:</b>
+            {% for source in article.sources.all %}
+                <u>{{source.sourceURL}}</u>
+            {% endfor %}
         {% endif %}
-        <form action="{% url 'Articles:edit' article.title %}" method="post">
-            {% csrf_token %}
-            <input type="text" placeholder="Title" name="title" value="{{article.title}}">
-            <textarea name="content" id="contect-box" cols="30" rows="10" placeholder="Content">{{article.content}}</textarea>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+            
+        <textarea name="sources" id="sources" cols="30" rows="5" placeholder="Sources"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</div>
 {% endblock %}

@@ -76,9 +76,31 @@ def edit(request, title):
         article.content = content
         article.title = title
         article.save()
+
+        # Adding Sources from edit page
+        sources = request.POST["sources"]
+        sources = sources.split(",")
+        article_sources_object = article.sources.all()
+        article_sources_list = []
+
+        # Converting Sources Query set into List
+        for source in article_sources_object:
+            article_sources_list.append(source.sourceURL)
+
+        for source in sources:
+            print(article_sources_list)
+            if source.strip() not in article_sources_list:
+                s = Source(sourceURL=source)
+                s.save()
+                s.articles.add(article)
+                s.save()
+
         return HttpResponseRedirect(reverse("Articles:article", args=(article.title,)))
+
+    # If request.method == GET
     return render(request, "Articles/edit.html", {
-        "article": article
+        "article": article,
+        "sources_length": len(article.sources.all())
     })
     
 
