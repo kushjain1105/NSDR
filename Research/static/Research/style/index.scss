@@ -1,2 +1,29 @@
 @forward "globals";
 @use "util" as u;
+@forward "template";
+body {
+    background-color: white;
+}
+
+.container {
+    width: 85vw;
+    margin: 20px auto;
+    min-height: 60vh;
+    a {
+        color: white;
+    }
+    .project {
+        background-color: var(--color3);
+        padding: 1rem;
+        border-radius: 5px;
+        margin: 10px auto;
+    }
+    .project:hover {
+        background-color: var(--color4);
+        transform: translateY(-3px);
+        transition: 0.2s ease-in-out;
+    }
+    @include u.breakpoint(medium) {
+        width: 60vw;
+    }
+}

@@ -2,8 +2,23 @@
 {% load static %}
 {% block title %}Research{% endblock %}
 {% block head %}
-    <link rel="stylesheet" href="{% static 'Research/style/index.html' %}">
+    <link rel="stylesheet" href="{% static 'Research/style/index.css' %}">
 {% endblock %}
 {% block body %}
-    <h1>Research</h1>
+<div class="template">
+    <div class="template-content">
+        <h1>Research</h1>
+        <hr>
+    </div>
+</div>
+
+<div class="container">
+    {% for project in projects %}
+        <a href="{% url 'Research:project' project.title %}">
+            <div class="project">
+                {{project.title}} 
+            </div>
+        </a>
+    {% endfor %}
+</div>
 {% endblock %}

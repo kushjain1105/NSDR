@@ -1,0 +1,31 @@
+@forward "globals";
+@use "util" as u;
+
+body {
+    background-color: var(--color3);
+}
+.container {
+    min-height: 100vh;
+    width: 85vw;
+    margin: 20px auto;
+
+    .articles, .images, .members {
+        background-color: var(--color2);
+        padding: 0.7rem;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .images a, .members a, .articles a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    @include u.breakpoint(medium) {
+        width: 60vw;
+    }
+    @include u.breakpoint(large) {
+        width: 50vw;
+    }
+
+}

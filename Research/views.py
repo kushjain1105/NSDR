@@ -1,5 +1,22 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 def index(request):
-    return render(request, "Research/index.html")
+    projects = Project.objects.all()
+    return render(request, "Research/index.html", {
+        "projects": projects
+    })
+
+def load_project(request, title):
+    project = Project.objects.get(title=title)
+    papers = Paper.objects.filter(project=project)
+    return render(request, "Research/project.html", {
+        "project": project,
+        "papers": papers
+    })
+
+def load_paper(request, id):
+    paper = Paper.objects.get(pk=id)
+    return render(request, "Research/paper.html",{
+        "paper": paper
+    })

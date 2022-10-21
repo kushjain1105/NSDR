@@ -1,0 +1,29 @@
+{% extends 'Home/layout.html' %}
+{% load static %}
+{% block title %}{{project.title}}{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Research/style/project.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1>{{project.title}}</h1>
+
+        <div class="articles">
+            <h2>Papers</h2>
+            {% for paper in papers %}
+                <a href="{% url 'Research:paper' paper.id %}">{{paper.title}}</a> <br>
+            {% endfor %}
+        </div>
+        <div class="images">
+            {% comment %} Yet to be done! {% endcomment %}
+            <a href="#">Images</a>
+        </div>
+        <div class="members">
+            <h2>Members</h2>
+            {% for member in project.members.all %}
+                <a href="{% url 'Home:member' member.user %}">{{member.user}}</a> <br>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'Home/layout.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Articles/style/article.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1>{{paper.title}}</h1>
+        <div class="content">
+            {{paper.content}}
+        </div>
+    </div>
+{% endblock %}

@@ -219,59 +219,32 @@ footer .copyright {
   }
 }
 
-.template {
-  position: relative;
-  height: 70vh;
-  background-color: var(--color1);
-  display: flex;
-}
-.template .template-content {
-  margin: auto auto 0 auto;
-  width: 90%;
-  padding: 1rem 0;
-}
-.template .template-content h1 {
-  text-align: center;
-  font-size: 3rem;
-}
-.template .template-content hr {
-  width: 150px;
-  background-color: white;
-  height: 5px;
-  position: relative;
-  bottom: 20px;
-}
-@media (max-width: 29.25em) {
-  .template .template-content {
-    width: 100%;
-  }
-}
-
 body {
-  background-color: white;
+  background-color: var(--color3);
 }
 
 .container {
+  min-height: 100vh;
   width: 85vw;
   margin: 20px auto;
-  min-height: 60vh;
 }
-.container a {
-  color: white;
-}
-.container .project {
-  background-color: var(--color3);
-  padding: 1rem;
+.container .articles, .container .images, .container .members {
+  background-color: var(--color2);
+  padding: 0.7rem;
+  margin-bottom: 10px;
   border-radius: 5px;
-  margin: 10px auto;
 }
-.container .project:hover {
-  background-color: var(--color4);
-  transform: translateY(-3px);
-  transition: 0.2s ease-in-out;
+.container .images a, .container .members a, .container .articles a {
+  color: white;
+  text-decoration: underline;
 }
 @media (min-width: 43.75em) {
   .container {
     width: 60vw;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+@media (min-width: 56.25em) {
+  .container {
+    width: 50vw;
+  }
+}/*# sourceMappingURL=project.css.map */
