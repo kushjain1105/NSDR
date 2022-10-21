@@ -3,6 +3,11 @@
 {% block title %}Schools{% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{% static 'Home/style/schools.css' %}">
+    <style>
+        .website:hover {
+            text-decoration: underline;
+        }
+    </style>
 {% endblock %}
 {% block body %}
 <div class="template">
@@ -20,7 +25,7 @@
                     </div>
                     <div class="description">
                         <h1>
-                            {{ school.name }}
+                            <a href="{{school.website}}" style="color:white" class="website">{{ school.name }}</a>
                         </h1>
                         {{school.description}}
                     </div>
