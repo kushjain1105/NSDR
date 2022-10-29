@@ -5,6 +5,12 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'Dashboard/style/index.css' %}">
+    <style>
+        iframe {
+            height: 50vh;
+            width: 100%;
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
@@ -19,9 +25,11 @@
         </ul>
 
         <div class="latest-report">
-            <h1>Latest Report</h1>
+            <h1>Latest Report</h1>  
             <p>You have no reports yet!</p>
         </div>
+    
+        <iframe src="{{report.graphURL}}" frameborder="0"></iframe>
 
         <div class="previous-reports">
             <h1><a href="{% url 'Dashboard:previous_reports' %}">Previous Reports</a></h1>

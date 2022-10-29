@@ -4,12 +4,22 @@
 {% endblock %}
 
 {% block head %}
-
+<style>
+    iframe {
+        height: 50vh;
+        width: 100%;
+        margin: 20px;
+    }
+</style>
 {% endblock %}
 
 {% block body %}
     <div class="container">
         <h1>Previous Reports</h1>
-        <p>Reports not available</p>
+        {% comment %} <p>Reports not available</p> {% endcomment %}
     </div>
+    {% for report in previousReports %}
+        <h3>At: {{report.dateTime}}</h3>
+        <iframe src="{{report.graphURL}}" frameborder="0"></iframe>
+    {% endfor %}
 {% endblock %}
