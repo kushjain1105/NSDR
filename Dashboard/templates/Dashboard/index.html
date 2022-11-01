@@ -28,9 +28,7 @@
             <h1>Latest Report</h1>  
             <p>You have no reports yet!</p>
         </div>
-    
-        <iframe src="{{report.graphURL}}" frameborder="0"></iframe>
-
+        {{report.graphURL|safe}}
         <div class="previous-reports">
             <h1><a href="{% url 'Dashboard:previous_reports' %}">Previous Reports</a></h1>
         </div>
